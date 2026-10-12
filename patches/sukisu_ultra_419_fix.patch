@@ -1,0 +1,106 @@
+diff --git a/infra/kernel_compat.h b/infra/kernel_compat.h
+index 1114533..6e84414 100644
+--- a/infra/kernel_compat.h
++++ b/infra/kernel_compat.h
+@@ -335,4 +335,16 @@ static inline struct file *ksu_filp_open_nonotify(const char *path, int flags)
+     return f;
+ }
+ 
++
++// https://github.com/torvalds/linux/commit/294f69e662d1570703e9b56e95be37a9fd3afba5
++#ifndef __has_attribute
++#define __has_attribute(x) __GCC4_has_attribute_##x
++#define __GCC4_has_attribute___fallthrough__ 0
++#endif
++#if __has_attribute(__fallthrough__)
++#define fallthrough __attribute__((__fallthrough__))
++#else
++#define fallthrough do { } while (0) /* fallthrough */
++#endif
++
+ #endif
+diff --git a/policy/allowlist.c b/policy/allowlist.c
+index 70d6a33..1df5017 100644
+--- a/policy/allowlist.c
++++ b/policy/allowlist.c
+@@ -1,3 +1,5 @@
++#include "infra/kernel_compat.h"
++
+ #define FILE_MAGIC 0x7f4b5355 // ' KSU', u32
+ #define FILE_FORMAT_VERSION 4 // u32
+ 
+diff --git a/runtime/ksud.c b/runtime/ksud.c
+index eed56f9..eae22b0 100644
+--- a/runtime/ksud.c
++++ b/runtime/ksud.c
+@@ -54,7 +54,9 @@ void on_post_fs_data(void)
+     ksu_observer_init();
+     // sanity check, this may influence the performance
+     stop_input_hook();
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 10, 0)
+     ksu_selinux_hide_handle_post_fs_data();
++#endif
+ }
+ 
+ extern void ext4_unregister_sysfs(struct super_block *sb);
+@@ -216,7 +218,9 @@ int ksu_handle_execveat_ksud(int *fd, struct filename **filename_ptr,
+             char buf[16];
+             if (check_argv(*argv, 1, "second_stage", buf, sizeof(buf))) {
+                 pr_info("/system/bin/init second_stage executed\n");
+-                ksu_selinux_hide_handle_second_stage();
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 10, 0)
++            ksu_selinux_hide_handle_second_stage();
++#endif
+                 apply_kernelsu_rules();
+                 cache_sid();
+                 setup_ksu_cred();
+@@ -288,7 +292,9 @@ int ksu_handle_execveat_ksud(int *fd, struct filename **filename_ptr, struct use
+         char buf[16];
+         if (!init_second_stage_executed && check_argv(*argv, 1, "second_stage", buf, sizeof(buf))) {
+             pr_info("/system/bin/init second_stage executed\n");
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 10, 0)
+             ksu_selinux_hide_handle_second_stage();
++#endif
+             apply_kernelsu_rules();
+             cache_sid();
+             setup_ksu_cred();
+diff --git a/sulog/event.c b/sulog/event.c
+index e45f01f..1220005 100644
+--- a/sulog/event.c
++++ b/sulog/event.c
+@@ -80,7 +80,7 @@ static __u32 ksu_sulog_copy_filename(const char __user *filename_user, char *dst
+     if (!filename_user)
+         return ksu_sulog_copy_empty_string(dst);
+ 
+-    ret = ksu_strncpy_from_user_nofault(dst, (const void __user *)untagged_addr((unsigned long)filename_user), dst_len);
++    ret = ksu_ksu_strncpy_from_user_nofault(dst, (const void __user *)untagged_addr((unsigned long)filename_user), dst_len);
+     if (ret <= 0)
+         return ksu_sulog_copy_empty_string(dst);
+ 
+@@ -142,7 +142,7 @@ static __u32 ksu_sulog_flatten_argv(struct user_arg_ptr *argv_user, char *dst, _
+             return ksu_sulog_copy_empty_string(dst);
+ 
+         copied =
+-            strncpy_from_user_nofault(arg, (const void __user *)untagged_addr((unsigned long)arg_user), sizeof(arg));
++            ksu_strncpy_from_user_nofault(arg, (const void __user *)untagged_addr((unsigned long)arg_user), sizeof(arg));
+         if (copied <= 0)
+             return ksu_sulog_copy_empty_string(dst);
+ 
+@@ -257,7 +257,7 @@ static __u32 ksu_sulog_flatten_argv(struct user_arg_ptr argv, char *dst, __u32 d
+         if (IS_ERR(arg_user))
+             return ksu_sulog_copy_empty_string(dst);
+ 
+-        copied = ksu_strncpy_from_user_nofault(arg, (const void __user *)untagged_addr((unsigned long)arg_user),
++        copied = ksu_ksu_strncpy_from_user_nofault(arg, (const void __user *)untagged_addr((unsigned long)arg_user),
+                                                sizeof(arg));
+         if (copied <= 0)
+             return ksu_sulog_copy_empty_string(dst);
+@@ -374,7 +374,7 @@ static struct ksu_sulog_pending_event *ksu_sulog_capture_grant_root(const struct
+     struct ksu_sulog_event *event;
+ 
+     // This is actually stupid fix
+-    #define USER_ARG_NULL user_arg_null_ptr()
++    #define USER_ARG_NULL (&(struct user_arg_ptr){ 0 })
+ 
+     pending = ksu_sulog_capture(KSU_SULOG_EVENT_IOCTL_GRANT_ROOT, NULL, USER_ARG_NULL, gfp);
+     if (!pending)
