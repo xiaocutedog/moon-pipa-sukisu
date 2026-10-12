@@ -156,15 +156,20 @@ jobs:
         run: |
           set +e
           mkdir -p /tmp/dbg
-          [ -f kernel/error.log ] && tail -n 400 kernel/error.log > /tmp/dbg/error.log
-          # capture what the integration produced
+          if [ -f kernel/error.log ]; then
+            cp kernel/error.log /tmp/dbg/error_full.log
+            echo "total lines: $(wc -l < kernel/error.log)" > /tmp/dbg/errors.txt
+            grep -nE "error:|Error [0-9]|undefined|No such file|cannot find|fatal error|\.rej|recipe for target" \
+              kernel/error.log | head -300 >> /tmp/dbg/errors.txt
+            tail -n 120 kernel/error.log > /tmp/dbg/error_tail.log
+            head -n 60 kernel/error.log > /tmp/dbg/error_head.log
+          fi
           { echo "== run $GITHUB_RUN_NUMBER =="; echo "kernel HEAD: $(git -C kernel rev-parse HEAD 2>/dev/null)";
             echo "SukiSU HEAD: $(git -C kernel/KernelSU rev-parse HEAD 2>/dev/null)";
-            echo "== grep KSU in modified sources ==";
-            grep -rns "ksu_handle" kernel/fs kernel/kernel/sys.c kernel/kernel/reboot.c 2>/dev/null | head -40;
-            echo "== tail xiaomi.config =="; tail -n 15 kernel/arch/arm64/configs/xiaomi.config 2>/dev/null;
           } > /tmp/dbg/summary.txt
           cd /tmp/dbg
+          # 大文件只保留前 1500 行，避免分支过大
+          [ -f error_full.log ] && head -n 1500 error_full.log > error_full_1500.log && rm -f error_full.log
           git init -q -b debug-log
           git config user.name "ci"
           git config user.email "ci@users.noreply.github.com"
