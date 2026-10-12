@@ -107,12 +107,13 @@ jobs:
         working-directory: kernel
         run: |
           set -e
-          # build.sh 会在 pipa_user_defconfig 之后 merge 该文件，故写在这里即生效
+          # 注意：4.19 的 scripts/kconfig/merge_config.sh 会删除以 '#' 开头的行，
+          # 所以这里必须用显式的 CONFIG_x=n，不能用 "# CONFIG_x is not set"。
           CFG=arch/arm64/configs/xiaomi.config
           {
             printf '\n# ===== SukiSU Ultra =====\n'
             printf 'CONFIG_KSU=y\n'
-            printf '# CONFIG_KSU_SUSFS is not set\n'
+            printf 'CONFIG_KSU_SUSFS=n\n'
             printf 'CONFIG_KALLSYMS=y\n'
             printf 'CONFIG_KALLSYMS_ALL=y\n'
             printf '# ========================\n'
