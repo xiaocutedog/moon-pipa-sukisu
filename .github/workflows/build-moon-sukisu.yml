@@ -159,6 +159,21 @@ jobs:
           path: 'moon-pipa-sukisu-*.zip'
           if-no-files-found: error
 
+      - name: Publish zip to artifacts branch (fetchable via git/ssh)
+        if: success()
+        run: |
+          set +e
+          mkdir -p /tmp/rel && cp moon-pipa-sukisu-*.zip /tmp/rel/
+          cd /tmp/rel
+          git init -q -b release-artifacts
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git"
+          git add -A
+          git -c commit.gpgsign=false commit -q -m "flashable zip run ${{ github.run_number }}"
+          git push -f origin release-artifacts
+          echo "pushed release-artifacts branch"
+
       - name: Upload build log on failure
         if: failure()
         uses: actions/upload-artifact@v4
