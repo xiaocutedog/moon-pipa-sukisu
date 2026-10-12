@@ -105,33 +105,38 @@ jobs:
           # 修正通用脚本在 builtin+SUSFS 关组合下的两处误判（否则链接期 undefined symbol）
           bash "$GITHUB_WORKSPACE/patches/fixup-hooks.sh" ./
 
-      - name: Set KSU in defconfig + neutralize SUSFS in build.sh
+      - name: Set KSU + moon config in the real defconfig
         working-directory: kernel
         run: |
           set -e
-          # 1) 打开 KSU（写进片段，build.sh 会 merge 它）
-          CFG=arch/arm64/configs/xiaomi.config
+          # moon 的 build.sh 里 `merge_config.sh -m out/.config xiaomi.config` 实际把结果写到
+          # 源码根 ./.config（随后被 build.sh 删除），所以 xiaomi.config 的 -moon / moon 特性
+          # 并不会进入最终 out/.config。这里改为直接把 xiaomi.config 追加进 make 真正读取的
+          # vendor defconfig，确保 moon 设置生效；同时打开 KSU。
+          DEF=arch/arm64/configs/vendor/pipa_user_defconfig
+          cat arch/arm64/configs/xiaomi.config >> "$DEF"
           {
             printf '\n# ===== SukiSU Ultra =====\n'
             printf 'CONFIG_KSU=y\n'
+            printf 'CONFIG_KSU_SUSFS=n\n'
             printf 'CONFIG_KALLSYMS=y\n'
             printf 'CONFIG_KALLSYMS_ALL=y\n'
             printf '# ========================\n'
-          } >> "$CFG"
+          } >> "$DEF"
+          echo "--- tail defconfig ---"; tail -n 25 "$DEF"
 
-          # 2) 关键：SukiSU 的 KSU_SUSFS 默认 y，但 SUSFS 需要外部内核补丁（本方案不集成），
-          #    不关掉会因找不到 <linux/susfs.h> 而编译失败。这里在 build.sh 的 olddefconfig
-          #    之前插入显式关闭（scripts/config），这是最可靠的覆盖方式。
+          # 双保险：在 build.sh 的 olddefconfig 之前用 scripts/config 关闭 KSU_SUSFS
           python3 - <<'PY'
           p = "build.sh"
           s = open(p).read()
           anchor = "yes '' | make $MAKE_ARGS olddefconfig || true"
           assert anchor in s, "build.sh anchor not found"
-          ins = "scripts/config --file out/.config -d KSU_SUSFS || true\n"
-          if ins not in s:
+          ins = ("scripts/config --file out/.config -d KSU_SUSFS || true\n"
+                 "scripts/config --file out/.config -e KSU || true\n")
+          if "scripts/config --file out/.config -d KSU_SUSFS" not in s:
               s = s.replace(anchor, ins + anchor, 1)
               open(p, "w").write(s)
-          print("patched build.sh to disable KSU_SUSFS")
+          print("patched build.sh")
           PY
           grep -n "KSU_SUSFS\|olddefconfig" build.sh | sed -n '1,6p'
 
