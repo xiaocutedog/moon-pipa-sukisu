@@ -103,22 +103,35 @@ jobs:
           set -e
           bash "$GITHUB_WORKSPACE/patches/syscall_hook_patches.sh" ./
 
-      - name: Enable KSU in kernel config (merged by build.sh)
+      - name: Set KSU in defconfig + neutralize SUSFS in build.sh
         working-directory: kernel
         run: |
           set -e
-          # 注意：4.19 的 scripts/kconfig/merge_config.sh 会删除以 '#' 开头的行，
-          # 所以这里必须用显式的 CONFIG_x=n，不能用 "# CONFIG_x is not set"。
+          # 1) 打开 KSU（写进片段，build.sh 会 merge 它）
           CFG=arch/arm64/configs/xiaomi.config
           {
             printf '\n# ===== SukiSU Ultra =====\n'
             printf 'CONFIG_KSU=y\n'
-            printf 'CONFIG_KSU_SUSFS=n\n'
             printf 'CONFIG_KALLSYMS=y\n'
             printf 'CONFIG_KALLSYMS_ALL=y\n'
             printf '# ========================\n'
           } >> "$CFG"
-          tail -n 12 "$CFG"
+
+          # 2) 关键：SukiSU 的 KSU_SUSFS 默认 y，但 SUSFS 需要外部内核补丁（本方案不集成），
+          #    不关掉会因找不到 <linux/susfs.h> 而编译失败。这里在 build.sh 的 olddefconfig
+          #    之前插入显式关闭（scripts/config），这是最可靠的覆盖方式。
+          python3 - <<'PY'
+          p = "build.sh"
+          s = open(p).read()
+          anchor = "yes '' | make $MAKE_ARGS olddefconfig || true"
+          assert anchor in s, "build.sh anchor not found"
+          ins = "scripts/config --file out/.config -d KSU_SUSFS || true\n"
+          if ins not in s:
+              s = s.replace(anchor, ins + anchor, 1)
+              open(p, "w").write(s)
+          print("patched build.sh to disable KSU_SUSFS")
+          PY
+          grep -n "KSU_SUSFS\|olddefconfig" build.sh | sed -n '1,6p'
 
       - name: Build & pack (moon 官方 build.sh + AnyKernel3)
         working-directory: kernel
@@ -167,6 +180,12 @@ jobs:
           fi
           { echo "== run $GITHUB_RUN_NUMBER =="; echo "kernel HEAD: $(git -C kernel rev-parse HEAD 2>/dev/null)";
             echo "SukiSU HEAD: $(git -C kernel/KernelSU rev-parse HEAD 2>/dev/null)";
+            echo "== out/.config KSU lines ==";
+            grep -nE "KSU|SUSFS" kernel/out/.config 2>/dev/null | head -30;
+            echo "== build.sh KSU_SUSFS anchor ==";
+            grep -n "KSU_SUSFS" kernel/build.sh 2>/dev/null;
+            echo "== xiaomi.config tail ==";
+            tail -n 10 kernel/arch/arm64/configs/xiaomi.config 2>/dev/null;
           } > /tmp/dbg/summary.txt
           cd /tmp/dbg
           # 大文件只保留前 1500 行，避免分支过大
