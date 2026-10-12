@@ -102,6 +102,8 @@ jobs:
         run: |
           set -e
           bash "$GITHUB_WORKSPACE/patches/syscall_hook_patches.sh" ./
+          # 修正通用脚本在 builtin+SUSFS 关组合下的两处误判（否则链接期 undefined symbol）
+          bash "$GITHUB_WORKSPACE/patches/fixup-hooks.sh" ./
 
       - name: Set KSU in defconfig + neutralize SUSFS in build.sh
         working-directory: kernel
