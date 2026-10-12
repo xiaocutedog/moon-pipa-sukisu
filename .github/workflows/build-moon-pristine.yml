@@ -1,0 +1,77 @@
+name: Build MOON kernel PRISTINE (repo build.sh, zero changes) - diagnostic
+
+# 诊断用：完全按 moon 仓库自带 build.sh 编译（不打任何补丁、不加 KSU、不改配置），
+# 用来判断“仓库自身能否编出可开机内核”。
+# 触发：push 到 pristine 分支
+
+on:
+  push:
+    branches: [ pristine ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  KERNEL_REPO: "https://github.com/bcggxx/android_kernel_xiaomi_moon_sm8250"
+  KERNEL_BRANCH: "main"
+
+jobs:
+  build:
+    name: Build moon PRISTINE
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git curl wget zip unzip bc bison flex gperf \
+            build-essential libssl-dev libelf-dev cpio lz4 lzop xz-utils \
+            python3 python-is-python3 device-tree-compiler p7zip-full
+
+      - name: Install AOSP clang-r416183b
+        run: |
+          set -e
+          wget -c --tries=10 --waitretry=5 --retry-connrefused -O clang.tar.gz \
+            "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/428d18d9732aa7ebfcaed87a582d86155db878d4/clang-r416183b.tar.gz"
+          mkdir -p "$GITHUB_WORKSPACE/clang"
+          tar -xzf clang.tar.gz -C "$GITHUB_WORKSPACE/clang"
+          echo "$GITHUB_WORKSPACE/clang/bin" >> "$GITHUB_PATH"
+
+      - name: Clone moon kernel
+        run: |
+          set -e
+          git clone --depth=1 -b "$KERNEL_BRANCH" "$KERNEL_REPO" kernel
+          cd kernel && echo "kernel HEAD: $(git rev-parse HEAD)"
+
+      - name: Build & pack (moon build.sh, NO modifications)
+        working-directory: kernel
+        run: |
+          set -e
+          bash build.sh
+
+      - name: Rename + show version
+        working-directory: kernel
+        run: |
+          set -e
+          f=$(ls Kernel_*.zip 2>/dev/null | head -n1)
+          [ -n "$f" ] || { echo "no zip"; ls -la; exit 1; }
+          mv "$f" "../moon-pristine-${GITHUB_RUN_NUMBER}.zip"
+          ls -la ../*.zip
+          # 打印实际产物内核版本
+          cd out/arch/arm64/boot 2>/dev/null && (grep -a -o -m1 "4\.19\.[0-9]*-[A-Za-z0-9.-]*" Image || true)
+
+      - name: Publish to release-pristine branch
+        if: success()
+        run: |
+          set +e
+          mkdir -p /tmp/rel && cp moon-pristine-*.zip /tmp/rel/
+          cd /tmp/rel
+          git init -q -b release-pristine
+          git config user.name ci; git config user.email "ci@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git"
+          git add -A
+          git -c commit.gpgsign=false commit -q -m "pristine zip run ${{ github.run_number }}"
+          git push -f origin release-pristine
