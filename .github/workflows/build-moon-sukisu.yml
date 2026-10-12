@@ -16,6 +16,9 @@ name: Build Moon Kernel + SukiSU Ultra (pipa)
 
 on:
   push:
+    paths:
+      - '.github/workflows/build-moon-sukisu.yml'
+      - 'patches/**'
   workflow_dispatch:
     inputs:
       jobs:
