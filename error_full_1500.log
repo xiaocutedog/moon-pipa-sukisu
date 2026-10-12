@@ -1,0 +1,1500 @@
+make[1]: Entering directory '/home/runner/work/moon-pipa-sukisu/moon-pipa-sukisu/kernel/out'
+  GEN     ./Makefile
+scripts/kconfig/conf  --syncconfig Kconfig
+drivers/input/touchscreen/hxchipset/Kconfig:2:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:3:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:4:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:5:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:6:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:8:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:9:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:10:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:11:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:12:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:13:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:14:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:15:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:16:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:17:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:19:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:20:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:21:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:22:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:23:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:25:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:26:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:27:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:28:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:29:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:30:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:32:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:33:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:34:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:35:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:36:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:38:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:39:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:40:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:41:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:42:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:44:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:45:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:46:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:47:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:48:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:50:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:51:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:52:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:53:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:54:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:56:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:57:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:58:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:59:warning: ignoring unsupported character ''
+drivers/input/touchscreen/hxchipset/Kconfig:60:warning: ignoring unsupported character ''
+drivers/misc/Kconfig:587:warning: config symbol defined without type
+drivers/misc/Kconfig:592:warning: config symbol defined without type
+drivers/misc/Kconfig:642:warning: config symbol defined without type
+drivers/usb_dagu/mtu3/Kconfig:28:warning: choice value used outside its choice group
+drivers/usb_dagu/mtu3/Kconfig:35:warning: choice value used outside its choice group
+drivers/usb_dagu/mtu3/Kconfig:42:warning: choice value used outside its choice group
+drivers/usb_dagu/musb/Kconfig:37:warning: choice value used outside its choice group
+drivers/usb_dagu/musb/Kconfig:44:warning: choice value used outside its choice group
+drivers/usb_dagu/musb/Kconfig:52:warning: choice value used outside its choice group
+drivers/usb_dagu/dwc3/Kconfig:28:warning: choice value used outside its choice group
+drivers/usb_dagu/dwc3/Kconfig:35:warning: choice value used outside its choice group
+drivers/usb_dagu/dwc3/Kconfig:42:warning: choice value used outside its choice group
+drivers/usb_dagu/dwc2/Kconfig:27:warning: choice value used outside its choice group
+drivers/usb_dagu/dwc2/Kconfig:37:warning: choice value used outside its choice group
+drivers/usb_dagu/dwc2/Kconfig:46:warning: choice value used outside its choice group
+drivers/usb_dagu/isp1760/Kconfig:32:warning: choice value used outside its choice group
+drivers/usb_dagu/isp1760/Kconfig:40:warning: choice value used outside its choice group
+drivers/usb_dagu/isp1760/Kconfig:48:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:491:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:498:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:43:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:79:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:119:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:195:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:211:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:223:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:267:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:284:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:296:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:321:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:337:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:356:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:375:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:394:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:408:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:459:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:474:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:507:warning: choice value used outside its choice group
+drivers/usb_dagu/gadget/legacy/Kconfig:521:warning: choice value used outside its choice group
+drivers/usb_dagu/mtu3/Kconfig:23:warning: choice default symbol 'USB_MTU3_DUAL_ROLE' is not contained in the choice
+drivers/usb_dagu/mtu3/Kconfig:24:warning: choice default symbol 'USB_MTU3_HOST' is not contained in the choice
+drivers/usb_dagu/mtu3/Kconfig:25:warning: choice default symbol 'USB_MTU3_GADGET' is not contained in the choice
+drivers/usb_dagu/musb/Kconfig:32:warning: choice default symbol 'USB_MUSB_DUAL_ROLE' is not contained in the choice
+drivers/usb_dagu/musb/Kconfig:33:warning: choice default symbol 'USB_MUSB_HOST' is not contained in the choice
+drivers/usb_dagu/musb/Kconfig:34:warning: choice default symbol 'USB_MUSB_GADGET' is not contained in the choice
+drivers/usb_dagu/dwc3/Kconfig:23:warning: choice default symbol 'USB_DWC3_DUAL_ROLE' is not contained in the choice
+drivers/usb_dagu/dwc3/Kconfig:24:warning: choice default symbol 'USB_DWC3_HOST' is not contained in the choice
+drivers/usb_dagu/dwc3/Kconfig:25:warning: choice default symbol 'USB_DWC3_GADGET' is not contained in the choice
+drivers/usb_dagu/dwc2/Kconfig:22:warning: choice default symbol 'USB_DWC2_DUAL_ROLE' is not contained in the choice
+drivers/usb_dagu/dwc2/Kconfig:23:warning: choice default symbol 'USB_DWC2_HOST' is not contained in the choice
+drivers/usb_dagu/dwc2/Kconfig:24:warning: choice default symbol 'USB_DWC2_PERIPHERAL' is not contained in the choice
+drivers/usb_dagu/isp1760/Kconfig:27:warning: choice default symbol 'USB_ISP1760_DUAL_ROLE' is not contained in the choice
+drivers/usb_dagu/isp1760/Kconfig:28:warning: choice default symbol 'USB_ISP1760_HOST_ROLE' is not contained in the choice
+drivers/usb_dagu/isp1760/Kconfig:29:warning: choice default symbol 'USB_ISP1760_GADGET_ROLE' is not contained in the choice
+drivers/usb_dagu/gadget/legacy/Kconfig:487:warning: choice default symbol 'USB_G_DBGP_SERIAL' is not contained in the choice
+drivers/usb_dagu/gadget/legacy/Kconfig:18:warning: choice default symbol 'USB_ETH' is not contained in the choice
+  GEN     ./Makefile
+  WRAP    arch/arm64/include/generated/uapi/asm/errno.h
+  WRAP    arch/arm64/include/generated/uapi/asm/ioctl.h
+  WRAP    arch/arm64/include/generated/uapi/asm/ioctls.h
+  WRAP    arch/arm64/include/generated/uapi/asm/ipcbuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/kvm_para.h
+  WRAP    arch/arm64/include/generated/uapi/asm/mman.h
+  WRAP    arch/arm64/include/generated/uapi/asm/msgbuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/poll.h
+  WRAP    arch/arm64/include/generated/uapi/asm/sembuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/resource.h
+  WRAP    arch/arm64/include/generated/uapi/asm/shmbuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/socket.h
+  WRAP    arch/arm64/include/generated/uapi/asm/sockios.h
+  WRAP    arch/arm64/include/generated/uapi/asm/swab.h
+  WRAP    arch/arm64/include/generated/uapi/asm/termbits.h
+  WRAP    arch/arm64/include/generated/uapi/asm/termios.h
+  WRAP    arch/arm64/include/generated/uapi/asm/types.h
+  UPD     include/generated/uapi/linux/version.h
+  UPD     include/config/kernel.release
+  Using .. as source for kernel
+  WRAP    arch/arm64/include/generated/asm/bugs.h
+  WRAP    arch/arm64/include/generated/asm/delay.h
+  WRAP    arch/arm64/include/generated/asm/div64.h
+  WRAP    arch/arm64/include/generated/asm/dma.h
+  WRAP    arch/arm64/include/generated/asm/dma-contiguous.h
+  WRAP    arch/arm64/include/generated/asm/early_ioremap.h
+  WRAP    arch/arm64/include/generated/asm/emergency-restart.h
+  WRAP    arch/arm64/include/generated/asm/hw_irq.h
+  WRAP    arch/arm64/include/generated/asm/irq_regs.h
+  WRAP    arch/arm64/include/generated/asm/kdebug.h
+  WRAP    arch/arm64/include/generated/asm/kmap_types.h
+  WRAP    arch/arm64/include/generated/asm/local.h
+  WRAP    arch/arm64/include/generated/asm/local64.h
+  WRAP    arch/arm64/include/generated/asm/mcs_spinlock.h
+  WRAP    arch/arm64/include/generated/asm/mm-arch-hooks.h
+  WRAP    arch/arm64/include/generated/asm/msi.h
+  WRAP    arch/arm64/include/generated/asm/preempt.h
+  WRAP    arch/arm64/include/generated/asm/qrwlock.h
+  WRAP    arch/arm64/include/generated/asm/qspinlock.h
+  WRAP    arch/arm64/include/generated/asm/segment.h
+  WRAP    arch/arm64/include/generated/asm/serial.h
+  WRAP    arch/arm64/include/generated/asm/set_memory.h
+  WRAP    arch/arm64/include/generated/asm/sizes.h
+  WRAP    arch/arm64/include/generated/asm/switch_to.h
+  WRAP    arch/arm64/include/generated/asm/trace_clock.h
+  UPD     include/generated/utsrelease.h
+  WRAP    arch/arm64/include/generated/asm/unaligned.h
+  WRAP    arch/arm64/include/generated/asm/user.h
+  WRAP    arch/arm64/include/generated/asm/vga.h
+  WRAP    arch/arm64/include/generated/asm/xor.h
+  HOSTCC  scripts/dtc/dtc.o
+  HOSTCC  scripts/dtc/flattree.o
+-- SukiSU-Ultra version: 40971 [v4.2.0-6c284e95@HEAD]
+-- KERNEL_VERSION: 4.19
+-- KERNEL_TYPE: Non-GKI
+-- SukiSU-Ultra: using Unknown
+-- KPM is disabled
+-- SukiSU-Ultra/compat: modern static_key_interface found
+-- You have not integrated susfs in your kernel yet.
+-- Read: https://gitlab.com/simonpunk/susfs4ksu
+  HOSTCC  scripts/genksyms/genksyms.o
+  HOSTCC  scripts/dtc/fstree.o
+  YACC    scripts/genksyms/parse.tab.c
+  HOSTCC  scripts/dtc/data.o
+  HOSTCC  scripts/dtc/livetree.o
+  LEX     scripts/genksyms/lex.lex.c
+  YACC    scripts/genksyms/parse.tab.h
+  HOSTCC  scripts/dtc/treesource.o
+  HOSTCC  scripts/dtc/srcpos.o
+  CC      scripts/mod/empty.o
+  HOSTCC  scripts/genksyms/parse.tab.o
+  HOSTCC  scripts/mod/mk_elfconfig
+  CC      scripts/mod/devicetable-offsets.s
+  HOSTCC  scripts/dtc/checks.o
+  MKELF   scripts/mod/elfconfig.h
+  HOSTCC  scripts/mod/modpost.o
+  HOSTCC  scripts/genksyms/lex.lex.o
+  HOSTCC  scripts/dtc/util.o
+  HOSTLD  scripts/genksyms/genksyms
+  LEX     scripts/dtc/dtc-lexer.lex.c
+  YACC    scripts/dtc/dtc-parser.tab.h
+  UPD     scripts/mod/devicetable-offsets.h
+  HOSTCC  scripts/mod/sumversion.o
+  YACC    scripts/dtc/dtc-parser.tab.c
+  HOSTCC  scripts/mod/file2alias.o
+  HOSTCC  scripts/selinux/genheaders/genheaders
+  HOSTCC  scripts/dtc/dtc-lexer.lex.o
+  HOSTCC  scripts/selinux/mdp/mdp
+  HOSTCC  scripts/dtc/dtc-parser.tab.o
+  HOSTLD  scripts/mod/modpost
+  HOSTCC  scripts/bin2c
+  HOSTCC  scripts/kallsyms
+  HOSTCC  scripts/pnmtologo
+  HOSTLD  scripts/dtc/dtc
+  HOSTCC  scripts/sortextable
+  HOSTCC  scripts/asn1_compiler
+  HOSTCC  scripts/extract-cert
+  CC      kernel/bounds.s
+  UPD     include/generated/bounds.h
+  UPD     include/generated/timeconst.h
+  CC      arch/arm64/kernel/asm-offsets.s
+  UPD     include/generated/asm-offsets.h
+  CALL    ../scripts/checksyscalls.sh
+  LDS     arch/arm64/kernel/vdso/vdso.lds
+  CC      arch/arm64/kernel/vdso/vgettimeofday.o
+  AS      arch/arm64/kernel/vdso/note.o
+  AS      arch/arm64/kernel/vdso/sigreturn.o
+  LD      arch/arm64/kernel/vdso/vdso.so.dbg
+  VDSOSYM include/generated/vdso-offsets.h
+  LDS     arch/arm64/kernel/vdso32/vdso.lds
+  CC32    arch/arm64/kernel/vdso32/note.o
+  CC32    arch/arm64/kernel/vdso32/vgettimeofday.o
+  AS32    arch/arm64/kernel/vdso32/sigreturn.o
+  HOSTCC  arch/arm64/kernel/vdso32/../../../arm/vdso/vdsomunge
+  LD32    arch/arm64/kernel/vdso32/vdso.so.raw
+  MUNGE   arch/arm64/kernel/vdso32/vdso.so.dbg
+  VDSOSYM include/generated/vdso32-offsets.h
+  CHK     include/generated/compile.h
+  CC      init/main.o
+  CC      init/do_mounts.o
+  HOSTCC  usr/gen_init_cpio
+  UPD     include/generated/compile.h
+  CC      init/do_mounts_rd.o
+  GEN     usr/initramfs_data.cpio
+  AS      usr/initramfs_data.o
+  AR      usr/built-in.a
+  CC      init/do_mounts_initrd.o
+  CC      arch/arm64/kernel/probes/uprobes.o
+  OBJCOPY arch/arm64/kernel/vdso/vdso.so
+  AS      arch/arm64/kernel/vdso/vdso.o
+  AR      arch/arm64/kernel/vdso/built-in.a
+  CC      arch/arm64/mm/dma-mapping.o
+  CC      arch/arm64/kernel/probes/decode-insn.o
+  CC      arch/arm64/net/bpf_jit_comp.o
+  CC      arch/arm64/kernel/probes/simulate-insn.o
+  CC      init/do_mounts_dm.o
+  AR      arch/arm64/kernel/probes/built-in.a
+  CC      arch/arm64/mm/extable.o
+  CC      init/noinitramfs.o
+  OBJCOPY arch/arm64/kernel/vdso32/vdso.so
+  AS      arch/arm64/kernel/vdso32/vdso.o
+  CC      arch/arm64/mm/fault.o
+  AR      arch/arm64/kernel/vdso32/built-in.a
+  CC      arch/arm64/kernel/debug-monitors.o
+  AR      arch/arm64/net/built-in.a
+  CC      arch/arm64/crypto/sha1-ce-glue.o
+  CC      init/initramfs.o
+  AS      arch/arm64/kernel/entry.o
+  AS      arch/arm64/crypto/sha1-ce-core.o
+  CC      arch/arm64/mm/init.o
+  CC      arch/arm64/kernel/irq.o
+  CC      arch/arm64/crypto/sha2-ce-glue.o
+  CC      arch/arm64/kernel/fpsimd.o
+  CC      init/calibrate.o
+  AS      arch/arm64/crypto/sha2-ce-core.o
+  CC      init/init_task.o
+  CC      arch/arm64/crypto/ghash-ce-glue.o
+  AS      arch/arm64/mm/cache.o
+  CC      arch/arm64/mm/copypage.o
+  AS      arch/arm64/crypto/ghash-ce-core.o
+  AS      arch/arm64/kernel/entry-fpsimd.o
+  AS      arch/arm64/crypto/aes-ce-core.o
+  CC      arch/arm64/crypto/aes-ce-glue.o
+  CC      arch/arm64/kernel/process.o
+  CC      init/version.o
+  CC      arch/arm64/mm/flush.o
+  AR      init/built-in.a
+  AR      kernel/bpf/preload/built-in.a
+  CC      arch/arm64/crypto/aes-ce-ccm-glue.o
+  CC      kernel/bpf/core.o
+  CC      arch/arm64/mm/ioremap.o
+  AS      arch/arm64/crypto/aes-ce-ccm-core.o
+  CC      arch/arm64/crypto/aes-glue-ce.o
+  CC      arch/arm64/kernel/ptrace.o
+  CC      arch/arm64/mm/mmap.o
+  AS      arch/arm64/crypto/aes-ce.o
+  CC      arch/arm64/crypto/aes-glue-neon.o
+  CC      arch/arm64/mm/pgd.o
+  CC      arch/arm64/kernel/setup.o
+  CC      kernel/bpf/syscall.o
+  CC      arch/arm64/mm/mmu.o
+  AS      arch/arm64/crypto/aes-neon.o
+  CC      arch/arm64/crypto/sha256-glue.o
+  CC      arch/arm64/kernel/signal.o
+  CC      arch/arm64/mm/context.o
+  SHIPPED arch/arm64/crypto/sha256-core.S
+  AS      arch/arm64/crypto/aes-cipher-core.o
+  CC      arch/arm64/crypto/aes-cipher-glue.o
+  CC      arch/arm64/kernel/sys.o
+  AS      arch/arm64/mm/proc.o
+  CC      arch/arm64/mm/pageattr.o
+  AS      arch/arm64/crypto/sha256-core.o
+  AR      arch/arm64/crypto/built-in.a
+  CC      arch/arm64/kernel/stacktrace.o
+  CC      kernel/cgroup/cgroup.o
+  AR      arch/arm64/mm/built-in.a
+  CC      kernel/bpf/verifier.o
+  CC      kernel/dma/mapping.o
+  CC      arch/arm64/kernel/time.o
+  CC      arch/arm64/kernel/traps.o
+  CC      kernel/dma/contiguous.o
+  CC      arch/arm64/kernel/io.o
+  CC      kernel/dma/coherent.o
+  CC      arch/arm64/kernel/vdso.o
+  CC      kernel/dma/removed.o
+  AS      arch/arm64/kernel/hyp-stub.o
+  CC      arch/arm64/kernel/psci.o
+  CC      kernel/cgroup/rstat.o
+  CC      arch/arm64/kernel/cpu_ops.o
+  CC      kernel/dma/direct.o
+  CC      arch/arm64/kernel/insn.o
+  CC      kernel/cgroup/namespace.o
+  CC      kernel/dma/swiotlb.o
+  CC      arch/arm64/kernel/return_address.o
+  CC      kernel/cgroup/cgroup-v1.o
+  CC      kernel/bpf/inode.o
+  AR      kernel/dma/built-in.a
+  CC      kernel/events/core.o
+  CC      arch/arm64/kernel/cpuinfo.o
+  CC      kernel/cgroup/freezer.o
+  CC      arch/arm64/kernel/cpu_errata.o
+  CC      kernel/bpf/helpers.o
+  CC      kernel/cgroup/legacy_freezer.o
+  CC      arch/arm64/kernel/cpufeature.o
+  CC      kernel/bpf/tnum.o
+  CC      kernel/cgroup/cpuset.o
+  CC      kernel/bpf/bpf_iter.o
+  CC      arch/arm64/kernel/alternative.o
+  CC      kernel/bpf/map_iter.o
+  CC      arch/arm64/kernel/cacheinfo.o
+  CC      kernel/bpf/task_iter.o
+  AR      kernel/cgroup/built-in.a
+  CC      arch/arm64/kernel/smp.o
+  CC      kernel/irq/irqdesc.o
+  CC      kernel/events/ring_buffer.o
+  CC      kernel/bpf/prog_iter.o
+  CC      kernel/irq/handle.o
+  CC      arch/arm64/kernel/smp_spin_table.o
+  CC      kernel/bpf/hashtab.o
+  CC      kernel/events/callchain.o
+  CC      kernel/irq/manage.o
+  CC      arch/arm64/kernel/topology.o
+  CC      kernel/events/uprobes.o
+  AS      arch/arm64/kernel/smccc-call.o
+  CC      arch/arm64/kernel/syscall.o
+  CC      kernel/irq/spurious.o
+  CC      kernel/bpf/arraymap.o
+  CC      kernel/irq/resend.o
+  CC      arch/arm64/kernel/sys32.o
+  CC      kernel/irq/chip.o
+  CC      arch/arm64/kernel/signal32.o
+  AR      kernel/events/built-in.a
+  CC      certs/system_keyring.o
+  CC      kernel/bpf/percpu_freelist.o
+  CC      kernel/bpf/bpf_lru_list.o
+  EXTRACT_CERTS   
+  AS      certs/system_certificates.o
+  AR      certs/built-in.a
+  CC      kernel/irq/dummychip.o
+  CC      mm/filemap.o
+  CC      arch/arm64/kernel/sys_compat.o
+  CC      kernel/bpf/lpm_trie.o
+  CC      kernel/irq/devres.o
+  AS      arch/arm64/kernel/kuser32.o
+  CC      arch/arm64/kernel/arm64ksyms.o
+  CC      kernel/bpf/map_in_map.o
+  CC      kernel/irq/autoprobe.o
+  CC      kernel/bpf/local_storage.o
+  CC      arch/arm64/kernel/module.o
+  CC      kernel/irq/irqdomain.o
+  CC      mm/mempool.o
+  CC      arch/arm64/kernel/module-plts.o
+  CC      kernel/bpf/queue_stack_maps.o
+  CC      arch/arm64/kernel/perf_regs.o
+  CC      kernel/bpf/ringbuf.o
+  CC      kernel/irq/proc.o
+  CC      arch/arm64/kernel/perf_callchain.o
+  CC      mm/oom_kill.o
+  CC      kernel/irq/cpuhotplug.o
+  CC      kernel/bpf/bpf_inode_storage.o
+  CC      arch/arm64/kernel/perf_event.o
+  CC      kernel/irq/pm.o
+  CC      arch/arm64/kernel/perf_trace_counters.o
+  CC      kernel/bpf/bpf_task_storage.o
+  CC      mm/fadvise.o
+  CC      kernel/irq/msi.o
+  CC      kernel/bpf/disasm.o
+  CC      arch/arm64/kernel/perf_trace_user.o
+  CC      kernel/irq/affinity.o
+  CC      kernel/bpf/trampoline.o
+  AS      arch/arm64/kernel/sleep.o
+  CC      arch/arm64/kernel/suspend.o
+  CC      mm/maccess.o
+  AR      kernel/irq/built-in.a
+  AR      kernel/livepatch/built-in.a
+  CC      kernel/bpf/btf.o
+  CC      arch/arm64/kernel/cpuidle.o
+  CC      fs/configfs/inode.o
+  CC      mm/page_alloc.o
+  CC      arch/arm64/kernel/pci.o
+  CC      fs/configfs/file.o
+  CC      arch/arm64/kernel/armv8_deprecated.o
+  CC      fs/configfs/dir.o
+  CC      arch/arm64/kernel/bootinfo.o
+  CC      kernel/bpf/dispatcher.o
+  AS      arch/arm64/kernel/head.o
+  LDS     arch/arm64/kernel/vmlinux.lds
+  AR      arch/arm64/kernel/built-in.a
+  CC      fs/configfs/symlink.o
+  CC      fs/crypto/crypto.o
+  CC      kernel/bpf/devmap.o
+  CC      fs/configfs/mount.o
+  CC      fs/configfs/item.o
+  CC      fs/crypto/fname.o
+  CC      mm/page-writeback.o
+  CC      kernel/bpf/cpumap.o
+  AR      fs/configfs/built-in.a
+  CC      fs/devpts/inode.o
+  CC      fs/crypto/hkdf.o
+  AR      fs/devpts/built-in.a
+  CC      kernel/locking/mutex.o
+  CC      kernel/bpf/bpf_local_storage.o
+  CC      fs/crypto/hooks.o
+  CC      kernel/locking/semaphore.o
+  CC      fs/crypto/keyring.o
+  CC      kernel/bpf/offload.o
+  CC      mm/readahead.o
+  CC      kernel/locking/rwsem.o
+  CC      fs/crypto/keysetup.o
+  CC      kernel/locking/percpu-rwsem.o
+  CC      mm/swap.o
+  CC      kernel/locking/spinlock.o
+  CC      kernel/bpf/net_namespace.o
+  CC      fs/crypto/keysetup_v1.o
+  CC      kernel/locking/osq_lock.o
+  CC      kernel/locking/qspinlock.o
+  CC      fs/crypto/policy.o
+  CC      kernel/bpf/stackmap.o
+  CC      kernel/locking/rtmutex.o
+  CC      mm/truncate.o
+  CC      kernel/locking/qrwlock.o
+  CC      fs/crypto/bio.o
+  CC      kernel/bpf/cgroup.o
+  AR      kernel/locking/built-in.a
+  CC      kernel/power/qos.o
+  CC      mm/vmscan.o
+  CC      fs/crypto/inline_crypt.o
+  CC      kernel/power/main.o
+  AR      fs/crypto/built-in.a
+  CC      fs/ecryptfs/dentry.o
+  CC      kernel/bpf/reuseport_array.o
+  CC      fs/ecryptfs/file.o
+  CC      kernel/power/process.o
+  CC      kernel/bpf/bpf_struct_ops.o
+  CC      fs/ecryptfs/inode.o
+  CC      kernel/power/suspend.o
+  CC      mm/shmem.o
+  CC      fs/ecryptfs/main.o
+  CC      kernel/bpf/bpf_lsm.o
+  CC      fs/ecryptfs/super.o
+  CC      kernel/power/wakelock.o
+  AR      kernel/bpf/built-in.a
+  AR      ipc/built-in.a
+  CC      kernel/power/poweroff.o
+  CC      fs/exfat/inode.o
+  CC      fs/ecryptfs/mmap.o
+  CC      kernel/power/energy_model.o
+  CC      mm/util.o
+  CC      fs/exfat/namei.o
+  CC      fs/ecryptfs/read_write.o
+  CC      kernel/power/wakeup_reason.o
+  CC      fs/ecryptfs/crypto.o
+  CC      fs/exfat/dir.o
+  CC      mm/mmzone.o
+  AR      kernel/power/built-in.a
+  CC      kernel/printk/printk.o
+  CC      mm/vmstat.o
+  CC      fs/exfat/super.o
+  CC      fs/ecryptfs/keystore.o
+  CC      fs/exfat/fatent.o
+  CC      kernel/printk/printk_safe.o
+  CC      fs/ecryptfs/kthread.o
+  CC      fs/exfat/cache.o
+  CC      mm/backing-dev.o
+  AR      kernel/printk/built-in.a
+  CC      kernel/rcu/update.o
+  CC      fs/exfat/nls.o
+  CC      fs/ecryptfs/debug.o
+  CC      fs/exfat/misc.o
+  CC      fs/ecryptfs/messaging.o
+  CC      kernel/rcu/sync.o
+  CC      mm/mm_init.o
+  CC      fs/exfat/file.o
+  CC      kernel/rcu/srcutree.o
+  CC      fs/ecryptfs/miscdev.o
+  CC      fs/exfat/balloc.o
+  CC      mm/mmu_context.o
+  CC      kernel/rcu/tree.o
+  AR      fs/ecryptfs/built-in.a
+  AR      fs/exofs/built-in.a
+  CC      security/bpf/hooks.o
+  AR      fs/exfat/built-in.a
+  CC      fs/exportfs/expfs.o
+  CC      mm/percpu.o
+  AR      security/bpf/built-in.a
+  CC      security/integrity/iint.o
+  AR      fs/exportfs/built-in.a
+  CC      fs/ext4/balloc.o
+  AR      security/integrity/built-in.a
+  CC      security/keys/gc.o
+  CC      security/keys/key.o
+  CC      fs/ext4/bitmap.o
+  CC      mm/slab_common.o
+  CC      kernel/rcu/rcu_segcblist.o
+  CC      security/keys/keyring.o
+  CC      fs/ext4/block_validity.o
+  AR      kernel/rcu/built-in.a
+  CC      kernel/sched/core.o
+  CC      fs/ext4/dir.o
+  CC      security/keys/keyctl.o
+  CC      fs/ext4/ext4_jbd2.o
+  CC      mm/compaction.o
+  CC      security/keys/permission.o
+  CC      security/keys/process_keys.o
+  CC      fs/ext4/extents.o
+  CC      security/keys/request_key.o
+  CC      mm/vmacache.o
+  CC      security/keys/request_key_auth.o
+  CC      mm/interval_tree.o
+  CC      security/keys/user_defined.o
+  CC      mm/list_lru.o
+  CC      fs/ext4/extents_status.o
+  CC      security/keys/compat.o
+  CC      kernel/sched/loadavg.o
+  CC      security/keys/proc.o
+  CC      mm/workingset.o
+  CC      fs/ext4/file.o
+  CC      security/keys/sysctl.o
+  CC      mm/debug.o
+  AR      security/keys/built-in.a
+  CC      fs/ext4/fsmap.o
+  GEN     security/selinux/flask.h security/selinux/av_permissions.h
+  CC      security/selinux/avc.o
+  CC      kernel/sched/clock.o
+  CC      mm/gup.o
+  CC      fs/ext4/fsync.o
+  CC      security/selinux/hooks.o
+  CC      kernel/sched/cputime.o
+  CC      fs/ext4/hash.o
+  CC      mm/highmem.o
+  CC      fs/ext4/ialloc.o
+  CC      mm/memory.o
+  CC      kernel/sched/idle.o
+  CC      security/selinux/selinuxfs.o
+  CC      fs/ext4/indirect.o
+  CC      security/selinux/netlink.o
+  CC      kernel/sched/fair.o
+  CC      fs/ext4/inline.o
+  CC      mm/mincore.o
+  CC      security/selinux/nlmsgtab.o
+  CC      mm/mlock.o
+  CC      security/selinux/netif.o
+  CC      fs/ext4/inode.o
+  CC      security/selinux/netnode.o
+  CC      mm/mmap.o
+  CC      security/selinux/netport.o
+  CC      kernel/sched/rt.o
+  CC      security/selinux/ss/ebitmap.o
+  CC      fs/ext4/ioctl.o
+  CC      mm/mprotect.o
+  CC      security/selinux/ss/hashtab.o
+  CC      mm/mremap.o
+  CC      security/selinux/ss/symtab.o
+  CC      kernel/sched/deadline.o
+  CC      fs/ext4/mballoc.o
+  CC      security/selinux/ss/sidtab.o
+  CC      mm/msync.o
+  CC      mm/page_vma_mapped.o
+  CC      security/selinux/ss/avtab.o
+  CC      kernel/sched/wait.o
+  CC      mm/pagewalk.o
+  CC      security/selinux/ss/policydb.o
+  CC      mm/pgtable-generic.o
+  CC      fs/ext4/migrate.o
+  CC      kernel/sched/wait_bit.o
+  CC      mm/rmap.o
+  CC      fs/ext4/mmp.o
+  CC      security/selinux/ss/services.o
+  CC      fs/ext4/move_extent.o
+  CC      kernel/sched/swait.o
+  CC      mm/vmalloc.o
+  CC      fs/ext4/namei.o
+  CC      security/selinux/ss/conditional.o
+  CC      kernel/sched/completion.o
+  CC      security/selinux/ss/mls.o
+  CC      mm/process_vm_access.o
+  CC      fs/ext4/page-io.o
+  CC      mm/showmem.o
+  CC      kernel/sched/cpupri.o
+  CC      security/selinux/ss/status.o
+  CC      fs/ext4/readpage.o
+  CC      mm/vmpressure.o
+  CC      mm/init-mm.o
+  CC      kernel/sched/cpudeadline.o
+  AR      security/selinux/built-in.a
+  CC      security/commoncap.o
+  CC      fs/ext4/resize.o
+  CC      mm/nobootmem.o
+  CC      kernel/sched/topology.o
+  CC      security/min_addr.o
+  CC      mm/madvise.o
+  CC      fs/ext4/super.o
+  CC      security/security.o
+  CC      mm/memblock.o
+  CC      kernel/sched/stop_task.o
+  CC      kernel/sched/pelt.o
+  CC      mm/page_io.o
+  AR      security/built-in.a
+  CC      fs/f2fs/dir.o
+  CC      mm/swap_state.o
+  CC      kernel/sched/walt.o
+  CC      mm/swapfile.o
+  CC      fs/f2fs/file.o
+  CC      fs/ext4/symlink.o
+  CC      fs/ext4/sysfs.o
+  CC      mm/swap_slots.o
+  CC      fs/ext4/xattr.o
+  CC      kernel/sched/boost.o
+  CC      mm/swap_ratio.o
+  CC      fs/f2fs/inode.o
+  CC      mm/dmapool.o
+  CC      kernel/sched/sched_avg.o
+  CC      fs/ext4/xattr_trusted.o
+  CC      fs/f2fs/namei.o
+  CC      mm/sparse.o
+  CC      fs/ext4/xattr_user.o
+  CC      fs/ext4/acl.o
+  CC      mm/sparse-vmemmap.o
+  CC      fs/f2fs/hash.o
+  CC      kernel/sched/stats.o
+  CC      mm/slub.o
+  CC      fs/ext4/xattr_security.o
+  CC      fs/f2fs/super.o
+  CC      kernel/sched/debug.o
+  CC      fs/ext4/verity.o
+  AR      fs/ext4/built-in.a
+  CC      fs/fat/cache.o
+  CC      kernel/sched/tune.o
+  CC      fs/fat/dir.o
+  CC      mm/migrate.o
+  CC      kernel/sched/cpuacct.o
+  CC      fs/fat/fatent.o
+  CC      fs/f2fs/inline.o
+  CC      kernel/sched/cpufreq.o
+  CC      mm/page_counter.o
+  CC      mm/memcontrol.o
+  CC      fs/f2fs/checkpoint.o
+  CC      fs/fat/file.o
+  CC      kernel/sched/cpufreq_schedutil.o
+  CC      fs/fat/inode.o
+  CC      fs/f2fs/gc.o
+  CC      kernel/sched/membarrier.o
+  CC      fs/fat/misc.o
+  CC      kernel/sched/isolation.o
+  CC      mm/swap_cgroup.o
+  CC      mm/page_isolation.o
+  CC      fs/f2fs/data.o
+  CC      fs/fat/nfs.o
+  CC      fs/fat/namei_vfat.o
+  CC      mm/zsmalloc.o
+  CC      kernel/sched/core_ctl.o
+  CC      fs/fat/namei_msdos.o
+  AR      fs/fat/built-in.a
+  CC      kernel/time/time.o
+  CC      mm/early_ioremap.o
+  CC      mm/cma.o
+  CC      fs/f2fs/node.o
+  CC      kernel/sched/psi.o
+  CC      kernel/time/timer.o
+  CC      mm/frame_vector.o
+  AR      kernel/sched/built-in.a
+  CC      kernel/trace/trace_clock.o
+  CC      mm/usercopy.o
+  CC      kernel/trace/ring_buffer.o
+  CC      fs/f2fs/segment.o
+  CC      kernel/time/hrtimer.o
+  CC      mm/memfd.o
+  CC      mm/process_reclaim.o
+  CC      kernel/trace/trace.o
+  CC      kernel/time/timekeeping.o
+  CC      mm/moon_reclaim.o
+  AR      mm/built-in.a
+  CC      crypto/asymmetric_keys/asymmetric_type.o
+  CC      kernel/time/ntp.o
+  CC      fs/f2fs/recovery.o
+  CC      kernel/time/clocksource.o
+  CC      crypto/asymmetric_keys/restrict.o
+  CC      crypto/asymmetric_keys/signature.o
+  CC      fs/f2fs/shrinker.o
+  CC      kernel/trace/trace_output.o
+  CC      kernel/time/jiffies.o
+  CC      crypto/asymmetric_keys/public_key.o
+  CC      fs/f2fs/extent_cache.o
+  CC      kernel/time/timer_list.o
+  ASN.1   crypto/asymmetric_keys/x509.asn1.c
+  ASN.1   crypto/asymmetric_keys/x509_akid.asn1.c
+  CC      crypto/asymmetric_keys/x509_public_key.o
+  CC      kernel/time/timeconv.o
+  CC      kernel/trace/trace_seq.o
+  ASN.1   crypto/asymmetric_keys/pkcs7.asn1.c
+  CC      crypto/asymmetric_keys/pkcs7_trust.o
+  CC      fs/f2fs/sysfs.o
+  CC      kernel/time/timecounter.o
+  CC      kernel/time/alarmtimer.o
+  CC      kernel/trace/trace_stat.o
+  CC      crypto/asymmetric_keys/pkcs7_verify.o
+  CC      kernel/trace/trace_printk.o
+  CC      crypto/asymmetric_keys/x509.asn1.o
+  CC      crypto/asymmetric_keys/x509_akid.asn1.o
+  CC      fs/f2fs/debug.o
+  CC      crypto/asymmetric_keys/x509_cert_parser.o
+  CC      kernel/time/posix-timers.o
+  CC      crypto/asymmetric_keys/pkcs7.asn1.o
+  CC      crypto/asymmetric_keys/pkcs7_parser.o
+  CC      fs/f2fs/xattr.o
+  CC      kernel/trace/trace_sched_switch.o
+  AR      crypto/asymmetric_keys/built-in.a
+  CC      crypto/api.o
+  CC      kernel/time/posix-cpu-timers.o
+  CC      kernel/trace/trace_nop.o
+  CC      fs/f2fs/acl.o
+  CC      kernel/time/posix-clock.o
+  CC      kernel/trace/blktrace.o
+  CC      crypto/cipher.o
+  CC      fs/f2fs/verity.o
+  CC      crypto/compress.o
+  CC      kernel/time/itimer.o
+  CC      fs/f2fs/compress.o
+  CC      crypto/memneq.o
+  CC      kernel/trace/trace_events.o
+  CC      kernel/time/clockevents.o
+  CC      crypto/crypto_wq.o
+  CC      kernel/time/tick-common.o
+  AR      fs/f2fs/built-in.a
+  CC      fs/fuse/dev.o
+  CC      crypto/algapi.o
+  CC      kernel/trace/trace_export.o
+  CC      kernel/time/tick-broadcast.o
+  CC      kernel/trace/trace_event_perf.o
+  CC      kernel/time/tick-broadcast-hrtimer.o
+  CC      crypto/scatterwalk.o
+  CC      kernel/time/sched_clock.o
+  CC      fs/fuse/dir.o
+  CC      kernel/time/tick-oneshot.o
+  CC      kernel/trace/trace_events_filter.o
+  CC      kernel/time/tick-sched.o
+  CC      crypto/proc.o
+  CC      fs/fuse/file.o
+  CC      crypto/aead.o
+  CC      kernel/time/vsyscall.o
+  CC      kernel/trace/trace_events_trigger.o
+  AR      kernel/time/built-in.a
+  CHK     kernel/kheaders_data.tar.xz
+  GEN     kernel/kheaders_data.tar.xz
+  CC      crypto/ablkcipher.o
+  CC      kernel/trace/bpf_trace.o
+  CC      fs/fuse/inode.o
+  CC      crypto/blkcipher.o
+  CC      fs/fuse/control.o
+  CC      fs/fuse/xattr.o
+  CC      crypto/skcipher.o
+  CC      kernel/trace/power-traces.o
+  CC      fs/fuse/acl.o
+  CC      fs/fuse/passthrough.o
+  CC      crypto/seqiv.o
+  AR      fs/fuse/built-in.a
+  CC      fs/incfs/data_mgmt.o
+  CC      kernel/trace/rpm-traces.o
+  CC      crypto/echainiv.o
+  CC      fs/incfs/format.o
+  CC      crypto/ahash.o
+  CC      kernel/trace/trace_probe.o
+  CC      fs/incfs/integrity.o
+  CC      fs/incfs/main.o
+  CC      kernel/trace/trace_uprobe.o
+  CC      crypto/shash.o
+  CC      fs/incfs/vfs.o
+  CC      kernel/trace/ipc_logging.o
+  AR      fs/incfs/built-in.a
+  CC      fs/jbd2/transaction.o
+  CC      crypto/akcipher.o
+  AR      kernel/trace/built-in.a
+  CC      block/partitions/check.o
+  CC      crypto/kpp.o
+  CC      block/partitions/msdos.o
+  CC      fs/jbd2/commit.o
+  CC      block/partitions/efi.o
+  ASN.1   crypto/rsapubkey.asn1.c
+  ASN.1   crypto/rsaprivkey.asn1.c
+  CC      crypto/rsa.o
+  CC      crypto/rsa_helper.o
+  CC      fs/jbd2/recovery.o
+  AR      block/partitions/built-in.a
+  CC      block/bio.o
+  CC      crypto/rsa-pkcs1pad.o
+  CC      fs/jbd2/checkpoint.o
+  CC      crypto/acompress.o
+  CC      fs/jbd2/revoke.o
+  CC      block/elevator.o
+  CC      crypto/scompress.o
+  CC      fs/jbd2/journal.o
+  CC      crypto/algboss.o
+  CC      block/blk-core.o
+  CC      crypto/testmgr.o
+  AR      fs/jbd2/built-in.a
+  CC      fs/kernfs/mount.o
+  CC      crypto/cmac.o
+  CC      fs/kernfs/inode.o
+  CC      crypto/hmac.o
+  CC      fs/kernfs/dir.o
+  CC      crypto/xcbc.o
+  CC      block/blk-tag.o
+  CC      crypto/crypto_null.o
+  CC      fs/kernfs/file.o
+  CC      block/blk-sysfs.o
+  CC      fs/kernfs/symlink.o
+  CC      crypto/md5.o
+  AR      fs/kernfs/built-in.a
+  CC      fs/nls/nls_base.o
+  CC      block/blk-flush.o
+  CC      crypto/sha1_generic.o
+  CC      fs/nls/nls_cp437.o
+  CC      fs/nls/nls_iso8859-1.o
+  AR      fs/nls/built-in.a
+  CC      fs/notify/dnotify/dnotify.o
+  CC      crypto/sha256_generic.o
+  CC      block/blk-settings.o
+  AR      fs/notify/dnotify/built-in.a
+  AR      fs/notify/fanotify/built-in.a
+  CC      fs/notify/inotify/inotify_fsnotify.o
+  CC      fs/notify/inotify/inotify_user.o
+  CC      crypto/sha512_generic.o
+  CC      block/blk-ioc.o
+  AR      fs/notify/inotify/built-in.a
+  CC      fs/notify/fsnotify.o
+  CC      crypto/gf128mul.o
+  CC      block/blk-map.o
+  CC      fs/notify/notification.o
+  CC      crypto/ecb.o
+  CC      block/blk-exec.o
+  CC      fs/notify/group.o
+  CC      crypto/cbc.o
+  CC      fs/notify/mark.o
+  CC      crypto/cts.o
+  CC      block/blk-merge.o
+  CC      crypto/xts.o
+  CC      fs/notify/fdinfo.o
+  AR      fs/notify/built-in.a
+  CC      fs/overlayfs/super.o
+  CC      crypto/ctr.o
+  CC      block/blk-softirq.o
+  CC      crypto/gcm.o
+  CC      fs/overlayfs/namei.o
+  CC      block/blk-timeout.o
+  CC      fs/overlayfs/util.o
+  CC      crypto/ccm.o
+  CC      fs/overlayfs/inode.o
+  CC      block/blk-lib.o
+  CC      crypto/chacha20poly1305.o
+  CC      fs/overlayfs/file.o
+  CC      fs/overlayfs/dir.o
+  CC      crypto/cryptd.o
+  CC      block/blk-mq.o
+  CC      fs/overlayfs/readdir.o
+  CC      fs/overlayfs/copy_up.o
+  CC      crypto/des_generic.o
+  CC      fs/overlayfs/export.o
+  CC      crypto/twofish_generic.o
+  CC      block/blk-mq-tag.o
+  AR      fs/overlayfs/built-in.a
+  CC      crypto/twofish_common.o
+  CC      fs/proc/task_mmu.o
+  CC      block/blk-stat.o
+  CC      crypto/aes_generic.o
+  CC      fs/proc/inode.o
+  CC      crypto/arc4.o
+  CC      fs/proc/root.o
+  CC      block/blk-mq-sysfs.o
+  CC      fs/proc/base.o
+  CC      crypto/chacha_generic.o
+  CC      crypto/poly1305_generic.o
+  CC      block/blk-mq-cpumap.o
+  CC      crypto/deflate.o
+  CC      fs/proc/generic.o
+  CC      block/blk-mq-sched.o
+  CC      crypto/crc32c_generic.o
+  CC      crypto/crc32_generic.o
+  CC      fs/proc/array.o
+  CC      crypto/authenc.o
+  CC      block/ioctl.o
+  CC      fs/proc/fd.o
+  CC      fs/proc/proc_tty.o
+  CC      fs/proc/cmdline.o
+  CC      block/genhd.o
+  CC      crypto/authencesn.o
+  CC      fs/proc/consoles.o
+  CC      fs/proc/cpuinfo.o
+  CC      crypto/lzo.o
+  CC      fs/proc/devices.o
+  CC      crypto/lz4.o
+  CC      fs/proc/interrupts.o
+  CC      block/partition-generic.o
+  CC      crypto/rng.o
+  CC      fs/proc/loadavg.o
+  CC      fs/proc/meminfo.o
+  CC      block/ioprio.o
+  CC      crypto/ansi_cprng.o
+  CC      fs/proc/stat.o
+  CC      fs/proc/uptime.o
+  CC      crypto/drbg.o
+  CC      fs/proc/util.o
+  CC      block/badblocks.o
+  CC      fs/proc/version.o
+  CC      crypto/jitterentropy.o
+  CC      fs/proc/softirqs.o
+  CC      crypto/jitterentropy-kcapi.o
+  CC      block/blk-rq-qos.o
+  CC      fs/proc/namespaces.o
+  CC      crypto/ghash-generic.o
+  CC      block/scsi_ioctl.o
+  CC      fs/proc/self.o
+  CC      crypto/ecc.o
+  CC      kernel/fork.o
+  CC      fs/proc/thread_self.o
+  CC      fs/proc/proc_sysctl.o
+  CC      block/bsg.o
+  CC      crypto/ecdh.o
+  CC      crypto/ecdh_helper.o
+  CC      block/blk-cgroup.o
+  CC      fs/proc/proc_net.o
+  CC      crypto/hash_info.o
+  CC      crypto/simd.o
+  CC      kernel/exec_domain.o
+  CC      fs/proc/kmsg.o
+  CC      kernel/panic.o
+  CC      crypto/rsapubkey.asn1.o
+  CC      crypto/rsaprivkey.asn1.o
+  AR      crypto/built-in.a
+  CC      fs/proc/page.o
+  CC      drivers/airoha/airoha_gps_driver.o
+  CC      block/noop-iosched.o
+  AR      drivers/airoha/built-in.a
+  CC      drivers/amba/bus.o
+  CC      block/deadline-iosched.o
+  CC      kernel/cpu.o
+  AR      fs/proc/built-in.a
+  CC      fs/pstore/inode.o
+  CC      block/cfq-iosched.o
+  CC      fs/pstore/platform.o
+  AR      drivers/amba/built-in.a
+  CC      drivers/android/binderfs.o
+  CC      fs/pstore/pmsg.o
+  CC      drivers/android/binder.o
+  CC      fs/pstore/ram.o
+  CC      kernel/exit.o
+  CC      block/mq-deadline.o
+  CC      fs/pstore/ram_core.o
+  CC      block/compat_ioctl.o
+  AR      fs/pstore/built-in.a
+  CC      fs/quota/dquot.o
+  CC      block/blk-mq-pci.o
+  CC      kernel/softirq.o
+  CC      block/keyslot-manager.o
+  CC      drivers/android/binder_alloc.o
+  CC      fs/quota/quota_v2.o
+  CC      fs/quota/quota_tree.o
+  CC      kernel/resource.o
+  CC      block/bio-crypt-ctx.o
+  AR      drivers/android/built-in.a
+  AR      drivers/auxdisplay/built-in.a
+  CC      drivers/base/firmware_loader/fallback_table.o
+  CC      fs/quota/quota.o
+  CC      block/blk-crypto.o
+  CC      drivers/base/firmware_loader/main.o
+  CC      kernel/sysctl.o
+  CC      fs/quota/kqid.o
+  AR      fs/quota/built-in.a
+  CC      fs/ramfs/inode.o
+  CC      block/blk-crypto-fallback.o
+  CC      drivers/base/firmware_loader/fallback.o
+  CC      fs/ramfs/file-mmu.o
+  AR      drivers/base/firmware_loader/built-in.a
+  CC      drivers/base/power/sysfs.o
+  AR      block/built-in.a
+  CC      fs/sdcardfs/dentry.o
+  AR      fs/ramfs/built-in.a
+  CC      kernel/sysctl_binary.o
+  CC      drivers/block/zram/zcomp.o
+  CC      fs/sdcardfs/file.o
+  CC      drivers/base/power/generic_ops.o
+  CC      drivers/block/zram/zram_drv.o
+  CC      kernel/capability.o
+  CC      fs/sdcardfs/inode.o
+  CC      drivers/base/power/common.o
+  CC      fs/sdcardfs/main.o
+  CC      drivers/base/power/qos.o
+  CC      kernel/ptrace.o
+  AR      drivers/block/zram/built-in.a
+  CC      drivers/block/brd.o
+  CC      fs/sdcardfs/super.o
+  CC      drivers/block/loop.o
+  CC      fs/sdcardfs/lookup.o
+  CC      drivers/base/power/runtime.o
+  CC      kernel/user.o
+  CC      fs/sdcardfs/mmap.o
+  CC      kernel/signal.o
+  CC      fs/sdcardfs/packagelist.o
+  CC      drivers/base/power/wakeirq.o
+  CC      drivers/block/vs_block_server.o
+  CC      drivers/base/power/main.o
+  CC      drivers/block/vs_block_client.o
+  CC      fs/sdcardfs/derived_perm.o
+  AR      fs/sdcardfs/built-in.a
+  AR      drivers/block/built-in.a
+  CC      fs/sysfs/file.o
+  CC      drivers/base/regmap/regmap.o
+  CC      drivers/base/power/wakeup.o
+  CC      kernel/sys.o
+  CC      fs/sysfs/dir.o
+  CC      fs/sysfs/symlink.o
+  CC      drivers/base/power/wakeup_stats.o
+  CC      drivers/base/power/domain.o
+  CC      drivers/base/regmap/regcache.o
+  CC      fs/sysfs/mount.o
+  CC      fs/sysfs/group.o
+  CC      kernel/umh.o
+  CC      drivers/base/regmap/regcache-rbtree.o
+  AR      fs/sysfs/built-in.a
+  CC      fs/tracefs/inode.o
+  CC      drivers/base/power/domain_governor.o
+  CC      drivers/base/regmap/regcache-flat.o
+  CC      kernel/workqueue.o
+  CC      drivers/base/power/clock_ops.o
+  AR      fs/tracefs/built-in.a
+  CC      fs/verity/enable.o
+  CC      drivers/base/regmap/regmap-i2c.o
+  AR      drivers/base/power/built-in.a
+  AR      drivers/base/test/built-in.a
+  CC      drivers/bluetooth/bluetooth-power.o
+  CC      drivers/base/regmap/regmap-spi.o
+  CC      fs/verity/hash_algs.o
+  CC      drivers/bluetooth/btfm_slim.o
+  CC      drivers/base/regmap/regmap-spmi.o
+  CC      fs/verity/init.o
+  CC      drivers/bluetooth/btfm_slim_codec.o
+  CC      fs/verity/measure.o
+  CC      kernel/pid.o
+  CC      drivers/base/regmap/regmap-mmio.o
+  CC      drivers/bluetooth/btfm_slim_slave.o
+  CC      fs/verity/open.o
+  CC      drivers/base/regmap/regmap-irq.o
+  AR      drivers/bluetooth/built-in.a
+  CC      drivers/bus/mhi/controllers/mhi_qcom.o
+  CC      kernel/task_work.o
+  CC      fs/verity/verify.o
+  CC      drivers/bus/mhi/controllers/mhi_arch_qcom.o
+  AR      drivers/base/regmap/built-in.a
+  CC      drivers/base/component.o
+  CC      kernel/extable.o
+  CC      fs/verity/signature.o
+  AR      drivers/bus/mhi/controllers/built-in.a
+  CC      drivers/bus/mhi/core/mhi_init.o
+  CC      kernel/params.o
+  CC      drivers/base/core.o
+  AR      fs/verity/built-in.a
+  CC      fs/open.o
+  CC      kernel/kthread.o
+  CC      drivers/bus/mhi/core/mhi_main.o
+  CC      fs/read_write.o
+  CC      drivers/base/bus.o
+  CC      kernel/sys_ni.o
+  CC      kernel/nsproxy.o
+  CC      drivers/base/dd.o
+  CC      drivers/bus/mhi/core/mhi_pm.o
+  CC      kernel/notifier.o
+  CC      fs/file_table.o
+  CC      drivers/base/syscore.o
+  CC      kernel/ksysfs.o
+  CC      fs/super.o
+  CC      drivers/bus/mhi/core/mhi_boot.o
+  CC      kernel/cred.o
+  CC      drivers/base/driver.o
+  CC      drivers/bus/mhi/core/mhi_dtr.o
+  CC      fs/char_dev.o
+  CC      drivers/base/class.o
+  CC      kernel/reboot.o
+  AR      drivers/bus/mhi/core/built-in.a
+  CC      drivers/base/platform.o
+  CC      drivers/bus/mhi/devices/mhi_netdev.o
+  CC      fs/stat.o
+  CC      kernel/async.o
+  CC      drivers/bus/mhi/devices/mhi_uci.o
+  CC      kernel/range.o
+  CC      drivers/base/cpu.o
+  CC      kernel/smpboot.o
+  CC      fs/exec.o
+  CC      drivers/bus/mhi/devices/mhi_satellite.o
+  CC      kernel/ucount.o
+  CC      drivers/base/firmware.o
+  CC      kernel/usermode_driver.o
+  AR      drivers/bus/mhi/devices/built-in.a
+  AR      drivers/bus/mhi/built-in.a
+  CC      drivers/bus/qcom-ebi2.o
+  CC      drivers/base/init.o
+  AR      drivers/bus/built-in.a
+  AR      drivers/cdrom/built-in.a
+  CC      drivers/base/map.o
+  CC      drivers/base/devres.o
+  AR      sound/arm/built-in.a
+  CC      kernel/kmod.o
+  AR      sound/atmel/built-in.a
+  CC      sound/core/sound.o
+  CC      fs/pipe.o
+  CC      drivers/base/attribute_container.o
+  CC      sound/core/init.o
+  CC      drivers/base/transport_class.o
+  CC      kernel/groups.o
+  CC      drivers/base/topology.o
+  CC      fs/namei.o
+  CC      sound/core/memory.o
+  CC      drivers/base/container.o
+  CC      kernel/freezer.o
+  CC      drivers/base/property.o
+  CC      sound/core/control.o
+  CC      kernel/profile.o
+  CC      sound/core/misc.o
+  CC      drivers/base/cacheinfo.o
+  CC      kernel/stacktrace.o
+  CC      fs/fcntl.o
+  CC      drivers/base/devcon.o
+  CC      sound/core/device.o
+  CC      kernel/futex.o
+  CC      drivers/base/module.o
+  CC      sound/core/info.o
+  CC      drivers/base/soc.o
+  CC      fs/ioctl.o
+  CC      drivers/base/pinctrl.o
+  CC      sound/core/ctljack.o
+  CC      sound/core/jack.o
+  CC      drivers/base/platform-msi.o
+  CC      kernel/smp.o
+  CC      fs/readdir.o
+  CC      drivers/base/arch_topology.o
+  CC      sound/core/hwdep.o
+  CC      kernel/uid16.o
+  AR      drivers/base/built-in.a
+  AR      drivers/char/agp/built-in.a
+  CC      drivers/char/diag/diagchar_core.o
+  CC      fs/select.o
+  CC      sound/core/timer.o
+  CC      kernel/module.o
+  CC      sound/core/pcm.o
+  CC      drivers/char/diag/diagchar_hdlc.o
+  CC      fs/dcache.o
+  CC      drivers/char/diag/diagfwd.o
+  CC      sound/core/pcm_native.o
+  CC      drivers/char/diag/diagfwd_peripheral.o
+  CC      kernel/kallsyms.o
+  CC      fs/inode.o
+  CC      drivers/char/diag/diagfwd_socket.o
+  CC      kernel/compat.o
+  CC      drivers/char/diag/diagfwd_rpmsg.o
+  CC      sound/core/pcm_lib.o
+  CC      drivers/char/diag/diag_mux.o
+  CC      fs/attr.o
+  CC      kernel/utsname.o
+  CC      drivers/char/diag/diag_memorydevice.o
+  GZIP    kernel/config_data.gz
+  CC      kernel/kheaders.o
+  CC      fs/bad_inode.o
+  CC      sound/core/pcm_misc.o
+  CC      drivers/char/diag/diag_usb.o
+  CC      kernel/stop_machine.o
+  CC      drivers/char/diag/diagmem.o
+  CC      fs/file.o
+  CC      sound/core/pcm_memory.o
+  CC      kernel/seccomp.o
+  CC      drivers/char/diag/diagfwd_cntl.o
+  CC      sound/core/memalloc.o
+  CC      drivers/char/diag/diag_dci.o
+  CC      fs/filesystems.o
+  CC      kernel/utsname_sysctl.o
+  CC      kernel/delayacct.o
+  CC      sound/core/pcm_timer.o
+  CC      fs/namespace.o
+  CC      drivers/char/diag/diag_masks.o
+  CC      kernel/taskstats.o
+  CC      sound/core/pcm_drm_eld.o
+  CC      kernel/tsacct.o
+  CC      sound/core/pcm_iec958.o
+  CC      drivers/char/diag/diag_debugfs.o
+  CC      drivers/char/diag/diagfwd_bridge.o
+  CC      kernel/tracepoint.o
+  CC      sound/core/rawmidi.o
+  CC      drivers/char/diag/diagfwd_mhi.o
+  CC      kernel/elfcore.o
+  CC      fs/seq_file.o
+  CC      kernel/irq_work.o
+  AR      drivers/char/diag/built-in.a
+  CC      drivers/char/hw_random/core.o
+  CC      sound/core/compress_offload.o
+  CC      fs/xattr.o
+  CC      kernel/cpu_pm.o
+  CC      drivers/char/hw_random/msm_rng.o
+  CC      kernel/iomem.o
+  AR      drivers/char/hw_random/built-in.a
+  CC      drivers/char/mem.o
+  AR      sound/core/built-in.a
+  AR      sound/drivers/mpu401/built-in.a
+  AR      sound/drivers/opl3/built-in.a
+  AR      sound/drivers/opl4/built-in.a
+  AR      sound/drivers/pcsp/built-in.a
+  AR      sound/drivers/vx/built-in.a
+  AR      sound/drivers/built-in.a
+  AR      sound/firewire/built-in.a
+  AR      sound/hda/built-in.a
+  AR      sound/i2c/other/built-in.a
+  AR      sound/i2c/built-in.a
+  CC      fs/libfs.o
+  AR      sound/isa/ad1816a/built-in.a
+  CC      kernel/rseq.o
+  AR      sound/isa/ad1848/built-in.a
+  AR      sound/isa/cs423x/built-in.a
+  AR      sound/isa/es1688/built-in.a
+  AR      sound/isa/galaxy/built-in.a
+  AR      sound/isa/gus/built-in.a
+  AR      sound/isa/msnd/built-in.a
+  AR      sound/isa/opti9xx/built-in.a
+  AR      sound/isa/sb/built-in.a
+  AR      sound/isa/wavefront/built-in.a
+  AR      sound/isa/wss/built-in.a
+  AR      sound/isa/built-in.a
+  AR      sound/mips/built-in.a
+  AR      sound/parisc/built-in.a
+  CC      drivers/char/random.o
+  AR      sound/pci/ac97/built-in.a
+  AR      sound/pci/ali5451/built-in.a
+  AR      sound/pci/asihpi/built-in.a
+  AR      sound/pci/au88x0/built-in.a
+  AR      sound/pci/aw2/built-in.a
+  AR      sound/pci/ca0106/built-in.a
+  AR      sound/pci/cs46xx/built-in.a
+  AR      sound/pci/cs5535audio/built-in.a
+  AR      sound/pci/ctxfi/built-in.a
+  AR      sound/pci/echoaudio/built-in.a
+  AR      sound/pci/emu10k1/built-in.a
+  AR      sound/pci/hda/built-in.a
+  AR      sound/pci/ice1712/built-in.a
+  AR      sound/pci/korg1212/built-in.a
+  AR      sound/pci/lola/built-in.a
+  AR      sound/pci/lx6464es/built-in.a
+  AR      sound/pci/mixart/built-in.a
+  AR      sound/pci/nm256/built-in.a
+  UPD     kernel/config_data.h
+  AR      sound/pci/oxygen/built-in.a
+  CC      kernel/configs.o
+  AR      sound/pci/pcxhr/built-in.a
+  AR      sound/pci/riptide/built-in.a
+  AR      sound/pci/rme9652/built-in.a
+  AR      sound/pci/trident/built-in.a
+  AR      sound/pci/vx222/built-in.a
+  AR      sound/pci/ymfpci/built-in.a
+  AR      sound/pci/built-in.a
+  AR      sound/pcmcia/pdaudiocf/built-in.a
+  AR      sound/pcmcia/vx/built-in.a
+  AR      sound/pcmcia/built-in.a
+  AR      sound/ppc/built-in.a
+  AR      sound/sh/built-in.a
+  AR      sound/soc/adi/built-in.a
+  AR      kernel/built-in.a
+  AR      sound/soc/amd/built-in.a
+  AR      sound/soc/atmel/built-in.a
+  AR      sound/sparc/built-in.a
+  AR      sound/soc/au1x/built-in.a
+  CC      drivers/char/ttyprintk.o
+  AR      sound/soc/bcm/built-in.a
+  AR      sound/soc/cirrus/built-in.a
+  CC      sound/soc/codecs/hdmi-codec.o
+  CC      fs/fs-writeback.o
+  MK_FW   firmware/novatek_nt36532_m82_fw_csot.bin.gen.S
+  IHEX    firmware/novatek_nt36532_m82_fw_csot.bin
+  MK_FW   firmware/novatek_nt36532_m82_fw_tm.bin.gen.S
+  IHEX    firmware/novatek_nt36532_m82_fw_tm.bin
+  AS      firmware/novatek_nt36532_m82_fw_csot.bin.gen.o
+  AS      firmware/novatek_nt36532_m82_fw_tm.bin.gen.o
+  AR      firmware/built-in.a
+  AR      drivers/char/ipmi/built-in.a
+  CC      fs/pnode.o
+  AR      sound/soc/codecs/built-in.a
+  AR      sound/soc/davinci/built-in.a
+  AR      sound/soc/dwc/built-in.a
+  AR      sound/soc/fsl/built-in.a
+  AR      sound/soc/generic/built-in.a
+  AR      sound/soc/hisilicon/built-in.a
+  AR      sound/soc/img/built-in.a
+  AR      sound/soc/intel/boards/built-in.a
+  CC      drivers/char/misc.o
+  AR      sound/soc/intel/common/built-in.a
+  AR      sound/soc/intel/built-in.a
+  AR      sound/soc/jz4740/built-in.a
+  AR      sound/soc/kirkwood/built-in.a
+  AR      sound/soc/mediatek/built-in.a
+  AR      sound/soc/meson/built-in.a
+  AR      sound/soc/mxs/built-in.a
+  AR      sound/soc/nuc900/built-in.a
+  AR      sound/soc/omap/built-in.a
+  AR      sound/soc/pxa/built-in.a
+  AR      sound/soc/qcom/built-in.a
+  AR      sound/spi/built-in.a
+  AR      sound/soc/rockchip/built-in.a
+  AR      sound/soc/samsung/built-in.a
+  AR      drivers/clk/actions/built-in.a
+  AR      sound/soc/sh/built-in.a
+  AR      sound/soc/sirf/built-in.a
+  AR      drivers/clk/bcm/built-in.a
+  AR      sound/soc/spear/built-in.a
+  AR      drivers/clk/imgtec/built-in.a
+  AR      drivers/clk/mediatek/built-in.a
+  AR      sound/soc/sti/built-in.a
+  AR      drivers/clk/mvebu/built-in.a
+  AR      sound/soc/stm/built-in.a
+  AR      sound/soc/sunxi/built-in.a
+  AR      drivers/clk/qcom/mdss/built-in.a
+  CC      drivers/clk/qcom/common.o
+  AR      sound/soc/tegra/built-in.a
+  AR      sound/soc/txx9/built-in.a
+  AR      sound/soc/uniphier/built-in.a
+  AR      sound/soc/ux500/built-in.a
+  AR      sound/soc/xtensa/built-in.a
+  AR      sound/soc/zte/built-in.a
+  CC      sound/soc/soc-core.o
+  CC      drivers/char/adsprpc.o
+  CC      drivers/clk/qcom/clk-regmap.o
+  CC      fs/splice.o
+  CC      drivers/clk/qcom/clk-alpha-pll.o
+  CC      sound/soc/soc-dapm.o
+  CC      drivers/clk/qcom/clk-pll.o
+  CC      fs/sync.o
+  CC      drivers/char/adsprpc_compat.o
+  CC      drivers/clk/qcom/clk-rcg.o
+  CC      drivers/char/okl4_pipe.o
+  CC      fs/utimes.o
+  CC      drivers/char/vservices_serial.o
+  CC      drivers/clk/qcom/clk-rcg2.o
+  CC      sound/soc/soc-jack.o
+  CC      fs/d_path.o
+  CC      drivers/char/vs_serial_client.o
+  CC      drivers/clk/qcom/clk-branch.o
+  CC      drivers/char/vs_serial_server.o
+  CC      sound/soc/soc-utils.o
+  CC      fs/stack.o
+  CC      drivers/char/xlogchar.o
+  CC      fs/fs_struct.o
+  CC      drivers/clk/qcom/clk-regmap-divider.o
+  CC      sound/soc/soc-pcm.o
+  CC [M]  drivers/char/rdbg.o
+  CC      fs/statfs.o
+  CC      drivers/clk/qcom/clk-regmap-mux.o
+  AR      drivers/char/built-in.a
+  CC      drivers/clocksource/timer-of.o
+  CC      drivers/clk/qcom/clk-regmap-mux-div.o
+  CC      drivers/clocksource/timer-probe.o
+  CC      fs/fs_pin.o
+  CC      drivers/clocksource/arm_arch_timer.o
+  CC      sound/soc/soc-io.o
+  CC      fs/nsfs.o
+  CC      drivers/clk/qcom/reset.o
+  CC      drivers/clk/qcom/clk-voter.o
+  CC      fs/buffer.o
+  CC      drivers/clocksource/dummy_timer.o
+  CC      sound/soc/soc-devres.o
+  CC      drivers/clk/qcom/clk-dummy.o
+  AR      drivers/clocksource/built-in.a
+  CC      techpack/audio/asoc/codecs/bolero/bolero-cdc.o
+  CC      drivers/clk/qcom/clk-debug.o
+  CC      sound/soc/soc-ops.o
+  CC      drivers/clk/qcom/gdsc-regulator.o
+  CC      techpack/audio/asoc/codecs/bolero/bolero-cdc-utils.o
+  CC      sound/soc/soc-compress.o
+  CC      fs/block_dev.o
+  CC      techpack/audio/asoc/codecs/bolero/bolero-cdc-regmap.o
+  CC      drivers/clk/qcom/gdsc.o
+  CC      techpack/audio/asoc/codecs/bolero/bolero-cdc-tables.o
+  AR      sound/soc/built-in.a
+  AR      sound/synth/built-in.a
+  CC      drivers/clk/qcom/camcc-kona.o
+  AR      sound/usb/6fire/built-in.a
+  AR      sound/usb/bcd2000/built-in.a
+  AR      sound/usb/caiaq/built-in.a
+  AR      sound/usb/hiface/built-in.a
+  CC      techpack/audio/asoc/codecs/bolero/bolero-clk-rsc.o
+  AR      sound/usb/misc/built-in.a
+  AR      sound/usb/usx2y/built-in.a
+  CC      sound/usb/card.o
+  CC      drivers/clk/qcom/clk-aop-qmp.o
+  CC      fs/direct-io.o
+  CC      drivers/clk/qcom/debugcc-kona.o
+  CC      techpack/audio/asoc/codecs/bolero/wsa-macro.o
+  CC      sound/usb/clock.o
+  CC      drivers/clk/qcom/dispcc-kona.o
+  CC      drivers/clk/qcom/gcc-kona.o
+  CC      sound/usb/endpoint.o
+  CC      fs/mpage.o
+  CC      drivers/clk/qcom/gpucc-kona.o
+  CC      techpack/audio/asoc/codecs/bolero/va-macro.o
+  CC      sound/usb/format.o
+  CC      drivers/clk/qcom/npucc-kona.o
+  CC      sound/usb/helper.o
+  CC      drivers/clk/qcom/videocc-kona.o
+  CC      techpack/audio/asoc/codecs/bolero/tx-macro.o
+  CC      drivers/clk/qcom/a53-pll.o
+  CC      fs/proc_namespace.o
+  CC      sound/usb/mixer.o
+  CC      drivers/clk/qcom/apcs-msm8916.o
+  CC      fs/eventpoll.o
+  CC      drivers/clk/qcom/clk-rpmh.o
+  CC      drivers/clk/qcom/clk-spmi-pmic-div.o
+  CC      techpack/audio/asoc/codecs/bolero/rx-macro.o
+  CC      sound/usb/mixer_quirks.o
+  AR      drivers/clk/qcom/built-in.a
+  AR      drivers/clk/renesas/built-in.a
+  AR      drivers/clk/ti/built-in.a
+  CC      drivers/clk/clk-devres.o
+  CC      fs/anon_inodes.o
+  CC      sound/usb/mixer_scarlett.o
+  CC      drivers/clk/clk-bulk.o
+  CC      fs/signalfd.o
+  AR      techpack/audio/asoc/codecs/bolero/built-in.a
+  CC      techpack/audio/asoc/codecs/cs35l41_k81/cs35l41.o
+  CC      sound/usb/mixer_us16x08.o
+  CC      drivers/clk/clkdev.o
+  CC      fs/timerfd.o
+  CC      sound/usb/pcm.o
+  CC      drivers/clk/clk.o
+  CC      techpack/audio/asoc/codecs/cs35l41_k81/cs35l41-i2c.o
+  CC      fs/eventfd.o
+  CC      techpack/audio/asoc/codecs/cs35l41_k81/cs35l41-tables.o
+  CC      sound/usb/power.o
+  CC      techpack/audio/asoc/codecs/cs35l41_k81/wm_adsp.o
+  CC      fs/aio.o
+  CC      sound/usb/proc.o
+  CC      sound/usb/quirks.o
+  CC      sound/usb/stream.o
+  CC      drivers/clk/clk-divider.o
+  AR      techpack/audio/asoc/codecs/cs35l41_k81/built-in.a
+  CC      fs/locks.o
+  AR      techpack/audio/asoc/codecs/rouleur/built-in.a
+  CC      sound/usb/validate.o
+  AR      techpack/audio/asoc/codecs/sdm660_cdc/built-in.a
+  CC      drivers/clk/clk-fixed-factor.o
+  AR      techpack/audio/asoc/codecs/wcd934x/built-in.a
+  AR      techpack/audio/asoc/codecs/wcd937x/built-in.a
+  CC      techpack/audio/asoc/codecs/wcd938x/wcd938x.o
+  CC      sound/usb/midi.o
+  CC      drivers/clk/clk-fixed-rate.o
+  CC      drivers/clk/clk-gate.o
+  CC      sound/usb/usb_audio_qmi_v01.o
+  CC      techpack/audio/asoc/codecs/wcd938x/wcd938x-regmap.o
+  CC      sound/usb/usb_audio_qmi_svc.o
+  CC      drivers/clk/clk-multiplier.o
+  CC      fs/compat.o
+  CC      techpack/audio/asoc/codecs/wcd938x/wcd938x-tables.o
+  CC      techpack/audio/asoc/codecs/wcd938x/wcd938x-mbhc.o
+  CC      drivers/clk/clk-mux.o
+  CC      fs/compat_ioctl.o
+  AR      sound/usb/built-in.a
+  AR      sound/x86/built-in.a
+  AR      sound/xen/built-in.a
+  CC      sound/sound_core.o
+  CC      drivers/clk/clk-composite.o
+  CC      techpack/audio/asoc/codecs/wcd938x/wcd938x-slave.o
+  CC      sound/last.o
+  AR      techpack/audio/asoc/codecs/wcd938x/built-in.a
+  CC      drivers/clk/clk-fractional-divider.o
+  AR      techpack/audio/asoc/codecs/wsa883x/built-in.a
+  AR      sound/built-in.a
+  CC      techpack/audio/asoc/codecs/wcd9xxx-core-init.o
+  CC      techpack/audio/dsp/codecs/q6audio_v2.o
+  CC      techpack/audio/asoc/codecs/msm-cdc-pinctrl.o

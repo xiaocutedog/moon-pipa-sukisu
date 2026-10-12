@@ -1,0 +1,23 @@
+== run 10 ==
+kernel HEAD: 931792aa4683961ed6457e577477d68f164e779b
+SukiSU HEAD: 6c284e957feaa9a388a9f1c37dc4ec80d95e434b
+== out/.config KSU lines ==
+1004:# CONFIG_NETFILTER_XT_TARGET_CHECKSUM is not set
+5715:CONFIG_KSU=y
+5716:CONFIG_KSU_FEATURE_ADBROOT=y
+5717:# CONFIG_KSU_DEBUG is not set
+5721:# KernelSU - SUSFS
+5723:# CONFIG_KSU_SUSFS is not set
+== build.sh KSU_SUSFS anchor ==
+109:scripts/config --file out/.config -d KSU_SUSFS || true
+== xiaomi.config tail ==
+# set moon change config:
+CONFIG_RCU_BOOST=y
+CONFIG_MOON_MEMCG_RECLAIM=y
+CONFIG_MOON_BOOST_DELAYs=500
+CONFIG_SOFTWARE_OS3=y
+
+# set new_moon_changes:
+CONFIG_MOON_UFS_WRITEBOOST=y
+CONFIG_MOON_BINDER_TASK_BOOST=y
+CONFIG_MOON_BLOCK_OWNER_OPT=y
