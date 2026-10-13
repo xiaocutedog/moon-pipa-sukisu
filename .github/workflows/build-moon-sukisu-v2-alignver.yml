@@ -1,0 +1,220 @@
+name: Build Moon Kernel + SukiSU Ultra (vmagic-aligned) [v2]
+
+# ============================================================
+# 独立运行版：不依赖宿主仓库内容，自己克隆 moon 内核源码。
+# 因此只要一个「空仓库」即可运行，无需 fork 200MB 的内核仓库。
+#
+# 触发：push（推入本文件即自动开跑）或手动 workflow_dispatch
+# 产物：Actions → 该次运行 → Artifacts → moon-pipa-sukisu-<n>.zip
+#
+# 集成内容：
+#   moon 内核 (4.19.157, pipa)  +  SukiSU Ultra (builtin / 手动 syscall hook)
+#   - 固定 SukiSU 提交，避免上游漂移导致补丁失配
+#   - 默认不集成 SUSFS（SukiSU builtin 接口为 bool 版，与 SUSFS static_key hook 不兼容）
+#   - 保留 moon 特性（-moon LOCALVERSION、CONFIG_MOON_* 等）
+# ============================================================
+
+on:
+  push:
+    branches: [ vmagic ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  # 已验证的 SukiSU builtin 提交（与本仓库 patches/sukisu_ultra_419_fix.patch 匹配）
+  SUKISU_COMMIT: "6c284e957feaa9a388a9f1c37dc4ec80d95e434b"
+  KERNEL_REPO: "https://github.com/bcggxx/android_kernel_xiaomi_moon_sm8250"
+  KERNEL_BRANCH: "main"
+
+jobs:
+  build:
+    name: Build moon + SukiSU Ultra
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: 'Checkout (this small repo: workflow + patches)'
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            git curl wget zip unzip bc bison flex gperf \
+            build-essential libssl-dev libelf-dev \
+            cpio lz4 lzop xz-utils python3 python-is-python3 \
+            device-tree-compiler p7zip-full
+
+      - name: Install AOSP clang-r416183b (moon 内核官方工具链)
+        run: |
+          set -e
+          wget -c --tries=10 --waitretry=5 --retry-connrefused \
+            -O clang.tar.gz \
+            "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/428d18d9732aa7ebfcaed87a582d86155db878d4/clang-r416183b.tar.gz"
+          mkdir -p "$GITHUB_WORKSPACE/clang"
+          tar -xzf clang.tar.gz -C "$GITHUB_WORKSPACE/clang"
+          echo "$GITHUB_WORKSPACE/clang/bin" >> "$GITHUB_PATH"
+
+      - name: Clone moon kernel
+        run: |
+          set -e
+          git clone --depth=1 -b "$KERNEL_BRANCH" "$KERNEL_REPO" kernel
+          cd kernel
+          echo "kernel HEAD: $(git rev-parse HEAD)"
+          head -n 5 Makefile
+
+      - name: Integrate SukiSU Ultra (builtin @ pinned commit)
+        working-directory: kernel
+        run: |
+          set -e
+          curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s "${SUKISU_COMMIT}"
+
+      - name: Verify SukiSU checkout + integration
+        working-directory: kernel
+        run: |
+          set -e
+          actual=$(git -C KernelSU rev-parse HEAD)
+          echo "SukiSU HEAD = $actual (want $SUKISU_COMMIT)"
+          if [ "$actual" != "$SUKISU_COMMIT" ]; then
+            git -C KernelSU checkout -f "$SUKISU_COMMIT"
+            actual=$(git -C KernelSU rev-parse HEAD)
+            [ "$actual" = "$SUKISU_COMMIT" ] || { echo "::error::cannot checkout pinned SukiSU commit"; exit 1; }
+          fi
+          test -e drivers/kernelsu/infra/kernel_compat.h || { echo "::error::drivers/kernelsu not wired"; exit 1; }
+          grep -q kernelsu drivers/Makefile || { echo "::error::drivers/Makefile missing kernelsu"; exit 1; }
+          grep -q 'drivers/kernelsu/Kconfig' drivers/Kconfig || { echo "::error::drivers/Kconfig missing kernelsu"; exit 1; }
+          echo "SukiSU Ultra integrated OK."
+
+      - name: Apply 4.19 compatibility fix
+        working-directory: kernel
+        run: |
+          set -e
+          ( cd drivers/kernelsu && patch -p1 < "$GITHUB_WORKSPACE/patches/sukisu_ultra_419_fix.patch" )
+
+      - name: Insert KernelSU manual (syscall) hooks
+        working-directory: kernel
+        run: |
+          set -e
+          bash "$GITHUB_WORKSPACE/patches/syscall_hook_patches.sh" ./
+          # 修正通用脚本在 builtin+SUSFS 关组合下的两处误判（否则链接期 undefined symbol）
+          bash "$GITHUB_WORKSPACE/patches/fixup-hooks.sh" ./
+
+      - name: Set KSU + moon config in the real defconfig
+        working-directory: kernel
+        run: |
+          set -e
+          # moon 的 build.sh 里 `merge_config.sh -m out/.config xiaomi.config` 实际把结果写到
+          # 源码根 ./.config（随后被 build.sh 删除），所以 xiaomi.config 的 -moon / moon 特性
+          # 并不会进入最终 out/.config。这里改为直接把 xiaomi.config 追加进 make 真正读取的
+          # vendor defconfig，确保 moon 设置生效；同时打开 KSU。
+          DEF=arch/arm64/configs/vendor/pipa_user_defconfig
+          # 对齐原厂内核版本串，确保 ROM 驱动模块 vermagic 匹配
+          sed -i 's/^CONFIG_LOCALVERSION=.*/CONFIG_LOCALVERSION="-moon-gc80e50029"/' arch/arm64/configs/xiaomi.config
+          sed -i 's/^CONFIG_LOCALVERSION_AUTO=.*/# CONFIG_LOCALVERSION_AUTO is not set/' arch/arm64/configs/xiaomi.config
+          cat arch/arm64/configs/xiaomi.config >> "$DEF"
+          {
+            printf '\n# ===== SukiSU Ultra =====\n'
+            printf 'CONFIG_KSU=y\n'
+            printf 'CONFIG_KSU_SUSFS=n\n'
+            printf 'CONFIG_KALLSYMS=y\n'
+            printf 'CONFIG_KALLSYMS_ALL=y\n'
+            printf '# ========================\n'
+          } >> "$DEF"
+          echo "--- tail defconfig ---"; tail -n 25 "$DEF"
+
+          # 双保险：在 build.sh 的 olddefconfig 之前用 scripts/config 关闭 KSU_SUSFS
+          python3 - <<'PY'
+          p = "build.sh"
+          s = open(p).read()
+          anchor = "yes '' | make $MAKE_ARGS olddefconfig || true"
+          assert anchor in s, "build.sh anchor not found"
+          ins = ("scripts/config --file out/.config -d KSU_SUSFS || true\n"
+                 "scripts/config --file out/.config -e KSU || true\n")
+          if "scripts/config --file out/.config -d KSU_SUSFS" not in s:
+              s = s.replace(anchor, ins + anchor, 1)
+              open(p, "w").write(s)
+          print("patched build.sh")
+          PY
+          grep -n "KSU_SUSFS\|olddefconfig" build.sh | sed -n '1,6p'
+
+      - name: Build & pack (moon 官方 build.sh + AnyKernel3)
+        working-directory: kernel
+        env:
+          JOBS: ${{ github.event.inputs.jobs }}
+        run: |
+          set -e
+          bash build.sh
+
+      - name: Rename artifact
+        working-directory: kernel
+        run: |
+          set -e
+          f=$(ls Kernel_*.zip 2>/dev/null | head -n1)
+          if [ -z "$f" ]; then echo "no zip produced"; ls -la; exit 1; fi
+          mv "$f" "../moon-pipa-sukisu-${GITHUB_RUN_NUMBER}.zip"
+          ls -la ../*.zip
+
+      - name: Upload flashable zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: moon-pipa-sukisu-${{ github.run_number }}
+          path: 'moon-pipa-sukisu-*.zip'
+          if-no-files-found: error
+
+      - name: Publish zip to artifacts branch (fetchable via git/ssh)
+        if: success()
+        run: |
+          set +e
+          mkdir -p /tmp/rel && cp moon-pipa-sukisu-*.zip /tmp/rel/
+          cd /tmp/rel
+          git init -q -b release-artifacts
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git"
+          git add -A
+          git -c commit.gpgsign=false commit -q -m "flashable zip run ${{ github.run_number }}"
+          git push -f origin release-artifacts
+          echo "pushed release-artifacts branch"
+
+      - name: Upload build log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-error-log-${{ github.run_number }}
+          path: kernel/error.log
+          if-no-files-found: ignore
+
+      - name: Publish debug log to branch (readable without token)
+        if: always()
+        run: |
+          set +e
+          mkdir -p /tmp/dbg
+          if [ -f kernel/error.log ]; then
+            cp kernel/error.log /tmp/dbg/error_full.log
+            echo "total lines: $(wc -l < kernel/error.log)" > /tmp/dbg/errors.txt
+            grep -nE "error:|Error [0-9]|undefined|No such file|cannot find|fatal error|\.rej|recipe for target" \
+              kernel/error.log | head -300 >> /tmp/dbg/errors.txt
+            tail -n 120 kernel/error.log > /tmp/dbg/error_tail.log
+            head -n 60 kernel/error.log > /tmp/dbg/error_head.log
+          fi
+          { echo "== run $GITHUB_RUN_NUMBER =="; echo "kernel HEAD: $(git -C kernel rev-parse HEAD 2>/dev/null)";
+            echo "SukiSU HEAD: $(git -C kernel/KernelSU rev-parse HEAD 2>/dev/null)";
+            echo "== out/.config KSU lines ==";
+            grep -nE "KSU|SUSFS" kernel/out/.config 2>/dev/null | head -30;
+            echo "== build.sh KSU_SUSFS anchor ==";
+            grep -n "KSU_SUSFS" kernel/build.sh 2>/dev/null;
+            echo "== xiaomi.config tail ==";
+            tail -n 10 kernel/arch/arm64/configs/xiaomi.config 2>/dev/null;
+          } > /tmp/dbg/summary.txt
+          cd /tmp/dbg
+          # 大文件只保留前 1500 行，避免分支过大
+          [ -f error_full.log ] && head -n 1500 error_full.log > error_full_1500.log && rm -f error_full.log
+          git init -q -b debug-log
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git"
+          git add -A
+          git -c commit.gpgsign=false commit -q -m "debug log run ${{ github.run_number }}"
+          git push -f origin debug-log
+          echo "pushed debug-log branch"
